@@ -29,7 +29,7 @@ namespace SP.Readers
             i = 0;
         }
 
-        public string GetNextLine()
+        public override string GetNextLine()
         {
             if (i >= Lines.Length) return null;
             return Lines[i++];

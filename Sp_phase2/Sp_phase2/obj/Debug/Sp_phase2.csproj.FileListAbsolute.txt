@@ -1,1 +1,6 @@
 C:\Users\Hosam\Documents\GitHub\SPsimulator\Sp_phase2\Sp_phase2\bin\Debug\Sp_phase2.exe.config
+C:\Users\Hosam\Documents\GitHub\SPsimulator\Sp_phase2\Sp_phase2\obj\Debug\Sp_phase2.csprojResolveAssemblyReference.cache
+C:\Users\Hosam\Documents\GitHub\SPsimulator\Sp_phase2\Sp_phase2\bin\Debug\Sp_phase2.exe
+C:\Users\Hosam\Documents\GitHub\SPsimulator\Sp_phase2\Sp_phase2\bin\Debug\Sp_phase2.pdb
+C:\Users\Hosam\Documents\GitHub\SPsimulator\Sp_phase2\Sp_phase2\obj\Debug\Sp_phase2.exe
+C:\Users\Hosam\Documents\GitHub\SPsimulator\Sp_phase2\Sp_phase2\obj\Debug\Sp_phase2.pdb
