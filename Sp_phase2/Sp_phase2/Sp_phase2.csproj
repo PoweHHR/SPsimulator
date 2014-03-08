@@ -41,8 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Readers\FileReader.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Readers\Reader.cs" />
+    <Compile Include="Readers\StringReader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
