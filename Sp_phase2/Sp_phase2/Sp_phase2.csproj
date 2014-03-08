@@ -7,7 +7,7 @@
     <ProjectGuid>{B6FB6F47-657A-49E2-9998-17EC1C0DF5B2}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sp_phase2</RootNamespace>
+    <RootNamespace>SP</RootNamespace>
     <AssemblyName>Sp_phase2</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -46,9 +46,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Readers\Reader.cs" />
     <Compile Include="Readers\StringReader.cs" />
+    <Compile Include="Records\LineParser.cs" />
+    <Compile Include="Records\Record.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Exceptions\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
