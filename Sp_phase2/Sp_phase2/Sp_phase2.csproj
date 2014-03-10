@@ -53,7 +53,9 @@
     <Compile Include="Readers\StringReader.cs" />
     <Compile Include="Records\LineParser.cs" />
     <Compile Include="Records\Record.cs" />
-    <Compile Include="RegistersUnit\RegisterUnit.cs" />
+    <Compile Include="RegistersUnit\Register.cs" />
+    <Compile Include="RegistersUnit\Registers.cs" />
+    <Compile Include="RegistersUnit\RegistersIndex.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

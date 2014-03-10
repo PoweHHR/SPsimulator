@@ -8,8 +8,8 @@ namespace SP.Registers
 {
     class Register
     {
+        #region RegisterData
         private int data;
-       
         public byte lowByte{
             get
             {
@@ -40,11 +40,16 @@ namespace SP.Registers
             {
                 data = value;
             }
-            
-    
-        }
 
-       
+
+        }
+        #endregion
+
+        #region RegisterManipulations
+        
+        
+        #endregion
+
 
     }
 }
