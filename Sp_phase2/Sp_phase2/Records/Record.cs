@@ -13,6 +13,14 @@ namespace SP.Records
         public ushort address; 
         public byte checkSum;
         public byte[] data;
+        
+        //Index can be 0 for the lowest byte // 1 for the most significant byte
+        public byte Address0(int byteIndex){
+            return (byte)(address >> byteIndex*8);
+
+        }
+     
+
     }
 
     //class Record1 : Record

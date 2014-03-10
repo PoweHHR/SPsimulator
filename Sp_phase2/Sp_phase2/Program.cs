@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sp_phase2
+namespace SP
 {
     class Program
     {

@@ -16,6 +16,21 @@ namespace SP.Readers
             //StreamReader fd = new StreamReader(FilePath);
             fs = FilePath;
         }
+
+
+        /// <summary>
+        /// this is extensive function call it once
+        /// </summary>
+        /// <returns></returns>
+        public override int GetLineCount()
+        {
+            int i =0;
+            StreamReader r = new StreamReader(fs);
+            while (!r.EndOfStream) { r.ReadLine(); i++; }
+            r.Close();
+            return i;
+
+        }
         public override void  OpenReadingSession()
         {
             fd = new StreamReader(fs);

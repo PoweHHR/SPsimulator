@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Exceptions\Exceptions.cs" />
     <Compile Include="Filters\Filter.cs" />
+    <Compile Include="Filters\Filters\duplicateRecorcdType1Filter.cs" />
     <Compile Include="Helper\Helper.cs" />
     <Compile Include="Readers\FileReader.cs" />
     <Compile Include="Program.cs" />
@@ -55,9 +56,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Filters\Filters\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

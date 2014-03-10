@@ -28,7 +28,10 @@ namespace SP.Readers
             Lines = code.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
             i = 0;
         }
-
+        public override int GetLineCount()
+        {
+            return Lines.Length;
+        }
         public override string GetNextLine()
         {
             if (i >= Lines.Length) return null;
