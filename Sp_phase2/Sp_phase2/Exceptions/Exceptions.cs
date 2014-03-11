@@ -20,6 +20,14 @@ namespace SP.Exceptions
     {
         public RecordFormatException(string message) : base(message) { }
     }
+    class EmptyRecordLineException : ParseException
+    {
+        public EmptyRecordLineException() : base("Empty Line Record Exception") { }
+    }
+    class MissingRecordParameters: ParseException
+    {
+        public MissingRecordParameters(string message) : base(message) { }
+    }
 
 
 }

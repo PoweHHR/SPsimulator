@@ -10,7 +10,7 @@ namespace SP.Helpers
     {
         public static bool ValidHexChar(char hex)
         {
-            if (hex >= '0' && hex <= '0') return true;
+            if (hex >= '0' && hex <= '9') return true;
             if (hex >= 'a' && hex <= 'f') return true;
             if (hex >= 'A' && hex <= 'F') return true;
             return false; 
