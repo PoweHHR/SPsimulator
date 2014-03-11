@@ -34,6 +34,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,7 +45,17 @@
   <ItemGroup>
     <Compile Include="Exceptions\Exceptions.cs" />
     <Compile Include="Filters\Filter.cs" />
+    <Compile Include="Filters\Filters\AddressSeqFilter.cs" />
+    <Compile Include="Filters\Filters\ByteCountFilter.cs" />
+    <Compile Include="Filters\Filters\CheckSumFilter.cs" />
     <Compile Include="Filters\Filters\duplicateRecorcdType1Filter.cs" />
+    <Compile Include="Filters\Filters\MemoryBoundFilter.cs" />
+    <Compile Include="GUI\MemoryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MemoryView.Designer.cs">
+      <DependentUpon>MemoryView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper\Helper.cs" />
     <Compile Include="MemoryUnit\Memory.cs" />
     <Compile Include="Readers\FileReader.cs" />
@@ -60,7 +72,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="GUI\MemoryView.resx">
+      <DependentUpon>MemoryView.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -100,5 +100,21 @@ namespace SP.MemoryUnit
 
 
 
+        public string GetGroup16DataString(int address){
+            address = address - (address % 16);
+            string hex = address.ToString("X4")+":";
+            string str =" ";
+
+            for (int i = address; i < 16+address; i++)
+            {
+                hex += ' ' + memArr[i].ToString("X2");
+                if (memArr[i] != 255) str += (char)memArr[i];
+                else str += '-';
+
+            }
+
+            return hex + str;
+        }
+
     }
 }

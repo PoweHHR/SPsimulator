@@ -4,20 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SP.Records;
+using SP.GUI;
+using System.Windows.Forms;
 
 namespace SP
 {
-    class Program
+    static class Program
     {
-        static void Main(string[] args)
+        [STAThread]
+        static void Main()
         {
-
-            LineParser l = new LineParser();
-            
-            //l.TryParseLine("1-00 ffff aa");
-
-            l.TryParseLine("2-ff ffff*ffffff010203*fff");
-
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MemoryView());
         }
     }
 }
