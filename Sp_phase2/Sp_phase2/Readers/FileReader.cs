@@ -8,7 +8,7 @@ using System.IO;
 
 namespace SP.Readers
 {
-    class FileReader : Reader
+    public class FileReader : Reader
     {
         StreamReader fd=null;
         string fs;

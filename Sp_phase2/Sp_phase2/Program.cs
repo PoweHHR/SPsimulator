@@ -16,7 +16,7 @@ namespace SP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MemoryView());
+            Application.Run(new RecordsParent());
         }
     }
 }

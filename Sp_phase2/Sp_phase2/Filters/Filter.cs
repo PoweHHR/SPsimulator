@@ -13,7 +13,7 @@ namespace SP.Filters
         Valid
     }
 
-    abstract class Filter
+    public abstract class Filter
     {
         //true means valid
         //false means invalid

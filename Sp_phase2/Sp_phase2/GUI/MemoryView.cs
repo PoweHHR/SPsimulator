@@ -19,12 +19,12 @@ namespace SP.GUI
         public MemoryView()
         {
             InitializeComponent();
-            richTextBox1.Text = "";
-            memUnit[0] = (byte)'H';
-            memUnit[1] = (byte)'O';
-            memUnit[2] = (byte)'S';
-            memUnit[3] = (byte)'A';
-            memUnit[4] = (byte)'M';
+            //richTextBox1.Text = "";
+            //memUnit[0] = (byte)'H';
+            //memUnit[1] = (byte)'O';
+            //memUnit[2] = (byte)'S';
+            //memUnit[3] = (byte)'A';
+            //memUnit[4] = (byte)'M';
 
             for (int i = 0; i < 16 * 21; i+=16 )
                 richTextBox1.Text += memUnit.GetGroup16DataString(i);

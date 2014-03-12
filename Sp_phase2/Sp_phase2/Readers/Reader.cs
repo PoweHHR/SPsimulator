@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SP.Readers
 {
-    abstract class Reader
+    public abstract class Reader
     {
         public abstract void OpenReadingSession();
         public abstract void OpenReadingSession(string data);

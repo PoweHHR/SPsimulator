@@ -1,8 +1,10 @@
 C:\Users\Hosam\Documents\GitHub\SPsimulator\Sp_phase2\Sp_phase2\bin\Debug\Sp_phase2.exe.config
-C:\Users\Hosam\Documents\GitHub\SPsimulator\Sp_phase2\Sp_phase2\obj\Debug\Sp_phase2.csprojResolveAssemblyReference.cache
 C:\Users\Hosam\Documents\GitHub\SPsimulator\Sp_phase2\Sp_phase2\bin\Debug\Sp_phase2.exe
 C:\Users\Hosam\Documents\GitHub\SPsimulator\Sp_phase2\Sp_phase2\bin\Debug\Sp_phase2.pdb
 C:\Users\Hosam\Documents\GitHub\SPsimulator\Sp_phase2\Sp_phase2\obj\Debug\Sp_phase2.exe
 C:\Users\Hosam\Documents\GitHub\SPsimulator\Sp_phase2\Sp_phase2\obj\Debug\Sp_phase2.pdb
 C:\Users\Hosam\Documents\GitHub\SPsimulator\Sp_phase2\Sp_phase2\obj\Debug\SP.GUI.MemoryView.resources
 C:\Users\Hosam\Documents\GitHub\SPsimulator\Sp_phase2\Sp_phase2\obj\Debug\Sp_phase2.csproj.GenerateResource.Cache
+C:\Users\Hosam\Documents\GitHub\SPsimulator\Sp_phase2\Sp_phase2\obj\Debug\SP.GUI.RecordsWindow.resources
+C:\Users\Hosam\Documents\GitHub\SPsimulator\Sp_phase2\Sp_phase2\obj\Debug\SP.GUI.RecordsParent.resources
+C:\Users\Hosam\Documents\GitHub\SPsimulator\Sp_phase2\Sp_phase2\obj\Debug\Sp_phase2.csprojResolveAssemblyReference.cache

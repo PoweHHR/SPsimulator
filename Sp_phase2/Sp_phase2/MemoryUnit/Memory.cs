@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SP.MemoryUnit
 {
-    class Memory
+    public class Memory
     {
         private byte [] memArr;
         int currentptr;

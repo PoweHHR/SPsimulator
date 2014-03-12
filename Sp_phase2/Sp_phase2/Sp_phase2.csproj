@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B6FB6F47-657A-49E2-9998-17EC1C0DF5B2}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SP</RootNamespace>
     <AssemblyName>Sp_phase2</AssemblyName>
@@ -30,6 +30,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -56,6 +59,18 @@
     <Compile Include="GUI\MemoryView.Designer.cs">
       <DependentUpon>MemoryView.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\RecordsParent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\RecordsParent.Designer.cs">
+      <DependentUpon>RecordsParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\RecordsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\RecordsWindow.Designer.cs">
+      <DependentUpon>RecordsWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper\Helper.cs" />
     <Compile Include="MemoryUnit\Memory.cs" />
     <Compile Include="Readers\FileReader.cs" />
@@ -75,6 +90,12 @@
   <ItemGroup>
     <EmbeddedResource Include="GUI\MemoryView.resx">
       <DependentUpon>MemoryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\RecordsParent.resx">
+      <DependentUpon>RecordsParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\RecordsWindow.resx">
+      <DependentUpon>RecordsWindow.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
