@@ -23,6 +23,8 @@ namespace SP.GUI
     {
 
         public Memory memUnit = new Memory();
+        List<Record> records = new List<Record>();
+        public SP.Registers.Registers regs = new Registers.Registers();
         public FileReader fReader;
 
         
@@ -40,21 +42,110 @@ namespace SP.GUI
         {
 
         }
-    
-    
-        public void LoadFile(string file){
-            fReader = new FileReader (file);
-            int linesCount = fReader.GetLineCount();
-            int LineCounter=-1;
+
+        public void runCode()
+        {
+            for (int i =0 ; i < records.Count ;i++){
+                if (records[i].RecordType == 1)
+                {
+                    regs[RegistersIndex.PC].value = records[i].address;
+                    txtPC.Text = records[i].address.ToString("X4");
+                    return;
+                }
+            }
+            MessageBox.Show("Load code first!");
+        }
+
+        public void LoadFileToRecordBox(string file)
+        {
+            fReader = new FileReader(file);
+           // int linesCount = fReader.GetLineCount();
+           // int LineCounter = -1;
             fReader.OpenReadingSession();
-           
-            List<Record> records = new List<Record>();
+            string Data = "";
+            string Line;
+            while ((Line = fReader.GetNextLine()) != null)
+            {
+                Data += Line + Environment.NewLine;
+            }
+            RecordBox.Text = Data;
+        }
+
+
+        public void checkforErrors()
+        {
+            Reader fReader = new StringReader(RecordBox.Text);
+            ErrorsList.Items.Clear();
+            int LineCounter = -1;
+            fReader.OpenReadingSession();
+            int linesCount = fReader.GetLineCount();
+            records = new List<Record>();
             List<Filter> filters = new List<Filter>();
-            
+
+            filters.Add(new AddressSeqFilter());
+            filters.Add(new ByteCountFilter());
             filters.Add(new CheckSumFilter());
             filters.Add(new duplicateRecorcdType1Filter());
-            filters.Add(new AddressSeqFilter() );
             filters.Add(new MemoryBoundFilter());
+            filters.Add(new MissingRecord2Filter());
+           
+
+            string Line;
+            LineParser parser = new LineParser();
+            bool NoErrorsFound = true;
+            string Data = "";
+            while ((Line = fReader.GetNextLine()) != null)
+            {
+                try
+                {
+                    LineCounter++;
+                    Data += Line + Environment.NewLine;
+                    records.Add(parser.TryParseLine(Line));
+
+                    for (int j = 0; j < filters.Count; j++)
+                    {
+                        ErrorLevel e = filters[j].IsValidRecord(records[records.Count - 1], LineCounter, linesCount);
+                        if (e == ErrorLevel.Error || e == ErrorLevel.Warning)
+                        {
+                            string s = "Error: ";
+                            if (e == ErrorLevel.Warning) s = "Warning: ";
+                            ErrorsList.Items.Add(s+ filters[j].GetReason() + "(Line." + LineCounter + ")");
+                        }
+                    }
+
+
+
+                }
+                catch (ParseException e)
+                {
+                    NoErrorsFound = false;
+                    ErrorsList.Items.Add("Error: "+ e.Message + "(Line." + LineCounter + ")");
+                }
+            }
+            //RecordBox.Text = Data;
+
+
+            //load to memory part
+            
+        }
+
+        public void LoadFileToMemory(){
+            memUnit.Reset();
+            Reader  fReader= new StringReader(RecordBox.Text);
+            ErrorsList.Items.Clear();
+            int LineCounter=-1;
+            fReader.OpenReadingSession();
+            int linesCount = fReader.GetLineCount();
+
+            records = new List<Record>();
+            List<Filter> filters = new List<Filter>();
+
+            filters.Add(new AddressSeqFilter());
+            filters.Add(new ByteCountFilter());
+            filters.Add(new CheckSumFilter());
+            filters.Add(new duplicateRecorcdType1Filter());
+            filters.Add(new MemoryBoundFilter());
+            filters.Add(new MissingRecord2Filter());
 
             string Line;
             LineParser parser = new LineParser();
@@ -69,7 +160,9 @@ namespace SP.GUI
                     for (int j =0 ; j < filters.Count;j++){
                         ErrorLevel e = filters[j].IsValidRecord(records[records.Count-1],LineCounter,linesCount);
                         if (e == ErrorLevel.Error || e == ErrorLevel.Warning){
-                            ErrorsList.Items.Add(filters[j].GetReason());
+                            string s = "Error: ";
+                            if (e == ErrorLevel.Warning) s = "Warning: ";
+                            ErrorsList.Items.Add(s+filters[j].GetReason() + "(Line." + LineCounter + ")");
                         }
                     }
 
@@ -77,11 +170,21 @@ namespace SP.GUI
                    
                 }catch(ParseException e){
                     NoErrorsFound = false;
-                    ErrorsList.Items.Add(e.Message +"(Line." + LineCounter+")"  );
+                    ErrorsList.Items.Add("Error: " +e.Message +"(Line." + LineCounter+")"  );
                 }
             }
-            RecordBox.Text = Data;
-           
+            //RecordBox.Text = Data;
+
+
+            //load to memory part
+            if (NoErrorsFound)
+            {
+                for (int i = 0; i < records.Count; i++)
+                {
+                    if (records[i].RecordType !=1)
+                    memUnit.WriteBytesAtAddress(records[i].address, records[i].data);
+                }
+            }
         }
     
     }

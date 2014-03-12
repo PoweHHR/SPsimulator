@@ -14,12 +14,13 @@ namespace SP.GUI
     public partial class MemoryView : Form
     {
 
-        Memory memUnit = new Memory();
+        public Memory memUnit ;//= new Memory();
 
-        public MemoryView()
+        public MemoryView(Memory memHandler)
         {
+            memUnit = memHandler;
             InitializeComponent();
-            //richTextBox1.Text = "";
+            richTextBox1.Text = "";
             //memUnit[0] = (byte)'H';
             //memUnit[1] = (byte)'O';
             //memUnit[2] = (byte)'S';

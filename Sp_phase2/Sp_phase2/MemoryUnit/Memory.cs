@@ -22,6 +22,23 @@ namespace SP.MemoryUnit
                 memArr[i] = 0xFF;
         }
 
+
+
+        public void Reset()
+        {
+            for (int i = 0; i < MEMSIZE; i++)
+                memArr[i] = 0xFF;
+        }
+        public void WriteBytesAtAddress(int address, byte[] bytes)
+        {
+            for (int i = 0; i < bytes.Length; i++)
+            {
+                memArr[address + i] = bytes[i];
+
+            }
+        }
+
+
         //be aware that calling this with ushort 
         public byte this[int address]
         {
@@ -108,7 +125,11 @@ namespace SP.MemoryUnit
             for (int i = address; i < 16+address; i++)
             {
                 hex += ' ' + memArr[i].ToString("X2");
-                if (memArr[i] != 255) str += (char)memArr[i];
+                if (memArr[i] >=32 && memArr[i]<=126)
+                {
+
+                    str += (char)memArr[i];
+                }
                 else str += '-';
 
             }

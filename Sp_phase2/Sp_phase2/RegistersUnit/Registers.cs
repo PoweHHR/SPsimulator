@@ -6,13 +6,17 @@ using System.Threading.Tasks;
 
 namespace SP.Registers
 {
-    class Registers
+    public class Registers
     {
 
         Register[] regs;
         public Registers()
         {
-            regs = new Register[10];
+            regs = new Register[12];
+            for (int i = 0; i < regs.Length; i++)
+            {
+                regs[i] = new Register();
+            }
         }
 
         public Register this[RegistersIndex idx]

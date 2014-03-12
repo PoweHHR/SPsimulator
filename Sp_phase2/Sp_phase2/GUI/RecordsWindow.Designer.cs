@@ -58,7 +58,7 @@
             this.textBox32 = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.textBox35 = new System.Windows.Forms.TextBox();
-            this.textBox36 = new System.Windows.Forms.TextBox();
+            this.txtPC = new System.Windows.Forms.TextBox();
             this.textBox39 = new System.Windows.Forms.TextBox();
             this.textBox40 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -86,7 +86,7 @@
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(744, 179);
+            this.panel1.Size = new System.Drawing.Size(699, 179);
             this.panel1.TabIndex = 0;
             // 
             // groupBox2
@@ -124,7 +124,7 @@
             this.textBox9.ReadOnly = true;
             this.textBox9.Size = new System.Drawing.Size(54, 22);
             this.textBox9.TabIndex = 16;
-            this.textBox9.Text = "FFFF";
+            this.textBox9.Text = "0000";
             this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox10
@@ -136,7 +136,7 @@
             this.textBox10.ReadOnly = true;
             this.textBox10.Size = new System.Drawing.Size(54, 22);
             this.textBox10.TabIndex = 15;
-            this.textBox10.Text = "FFFF";
+            this.textBox10.Text = "0000";
             this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox11
@@ -148,7 +148,7 @@
             this.textBox11.ReadOnly = true;
             this.textBox11.Size = new System.Drawing.Size(54, 22);
             this.textBox11.TabIndex = 14;
-            this.textBox11.Text = "FFFF";
+            this.textBox11.Text = "0000";
             this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox12
@@ -160,7 +160,7 @@
             this.textBox12.ReadOnly = true;
             this.textBox12.Size = new System.Drawing.Size(54, 22);
             this.textBox12.TabIndex = 13;
-            this.textBox12.Text = "FFFF";
+            this.textBox12.Text = "0000";
             this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox13
@@ -172,7 +172,7 @@
             this.textBox13.ReadOnly = true;
             this.textBox13.Size = new System.Drawing.Size(21, 22);
             this.textBox13.TabIndex = 12;
-            this.textBox13.Text = "X0";
+            this.textBox13.Text = "X7";
             this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox14
@@ -184,7 +184,7 @@
             this.textBox14.ReadOnly = true;
             this.textBox14.Size = new System.Drawing.Size(21, 22);
             this.textBox14.TabIndex = 11;
-            this.textBox14.Text = "X0";
+            this.textBox14.Text = "X6";
             this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox15
@@ -196,7 +196,7 @@
             this.textBox15.ReadOnly = true;
             this.textBox15.Size = new System.Drawing.Size(21, 22);
             this.textBox15.TabIndex = 10;
-            this.textBox15.Text = "X0";
+            this.textBox15.Text = "X5";
             this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox16
@@ -208,7 +208,7 @@
             this.textBox16.ReadOnly = true;
             this.textBox16.Size = new System.Drawing.Size(21, 22);
             this.textBox16.TabIndex = 9;
-            this.textBox16.Text = "X0";
+            this.textBox16.Text = "X4";
             this.textBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox3
@@ -228,7 +228,7 @@
             this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(54, 22);
             this.textBox8.TabIndex = 7;
-            this.textBox8.Text = "FFFF";
+            this.textBox8.Text = "0000";
             this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox7
@@ -240,7 +240,7 @@
             this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(54, 22);
             this.textBox7.TabIndex = 6;
-            this.textBox7.Text = "FFFF";
+            this.textBox7.Text = "0000";
             this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox6
@@ -252,7 +252,7 @@
             this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(54, 22);
             this.textBox6.TabIndex = 5;
-            this.textBox6.Text = "FFFF";
+            this.textBox6.Text = "0000";
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox5
@@ -264,7 +264,7 @@
             this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(54, 22);
             this.textBox5.TabIndex = 4;
-            this.textBox5.Text = "FFFF";
+            this.textBox5.Text = "0000";
             this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
@@ -277,7 +277,7 @@
             this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(21, 22);
             this.textBox4.TabIndex = 3;
-            this.textBox4.Text = "X0";
+            this.textBox4.Text = "X3";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox3
@@ -289,7 +289,7 @@
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(21, 22);
             this.textBox3.TabIndex = 2;
-            this.textBox3.Text = "X0";
+            this.textBox3.Text = "X2";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox2
@@ -301,7 +301,7 @@
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(21, 22);
             this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "X0";
+            this.textBox2.Text = "X1";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox1
@@ -342,7 +342,7 @@
             this.textBox25.ReadOnly = true;
             this.textBox25.Size = new System.Drawing.Size(21, 22);
             this.textBox25.TabIndex = 7;
-            this.textBox25.Text = "FFFF";
+            this.textBox25.Text = "0";
             this.textBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox26
@@ -354,7 +354,7 @@
             this.textBox26.ReadOnly = true;
             this.textBox26.Size = new System.Drawing.Size(21, 22);
             this.textBox26.TabIndex = 6;
-            this.textBox26.Text = "FFFF";
+            this.textBox26.Text = "0";
             this.textBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox27
@@ -366,7 +366,7 @@
             this.textBox27.ReadOnly = true;
             this.textBox27.Size = new System.Drawing.Size(21, 22);
             this.textBox27.TabIndex = 5;
-            this.textBox27.Text = "FFFF";
+            this.textBox27.Text = "0";
             this.textBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox28
@@ -378,7 +378,7 @@
             this.textBox28.ReadOnly = true;
             this.textBox28.Size = new System.Drawing.Size(21, 22);
             this.textBox28.TabIndex = 4;
-            this.textBox28.Text = "FFFF";
+            this.textBox28.Text = "0";
             this.textBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox29
@@ -390,7 +390,7 @@
             this.textBox29.ReadOnly = true;
             this.textBox29.Size = new System.Drawing.Size(21, 22);
             this.textBox29.TabIndex = 3;
-            this.textBox29.Text = "X0";
+            this.textBox29.Text = "Z";
             this.textBox29.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox30
@@ -402,7 +402,7 @@
             this.textBox30.ReadOnly = true;
             this.textBox30.Size = new System.Drawing.Size(21, 22);
             this.textBox30.TabIndex = 2;
-            this.textBox30.Text = "X0";
+            this.textBox30.Text = "V";
             this.textBox30.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox31
@@ -414,7 +414,7 @@
             this.textBox31.ReadOnly = true;
             this.textBox31.Size = new System.Drawing.Size(21, 22);
             this.textBox31.TabIndex = 1;
-            this.textBox31.Text = "X0";
+            this.textBox31.Text = "N";
             this.textBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox32
@@ -426,13 +426,13 @@
             this.textBox32.ReadOnly = true;
             this.textBox32.Size = new System.Drawing.Size(21, 22);
             this.textBox32.TabIndex = 0;
-            this.textBox32.Text = "X0";
+            this.textBox32.Text = "C";
             this.textBox32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.textBox35);
-            this.groupBox5.Controls.Add(this.textBox36);
+            this.groupBox5.Controls.Add(this.txtPC);
             this.groupBox5.Controls.Add(this.textBox39);
             this.groupBox5.Controls.Add(this.textBox40);
             this.groupBox5.Location = new System.Drawing.Point(339, 20);
@@ -451,20 +451,20 @@
             this.textBox35.ReadOnly = true;
             this.textBox35.Size = new System.Drawing.Size(54, 22);
             this.textBox35.TabIndex = 5;
-            this.textBox35.Text = "FFFF";
+            this.textBox35.Text = "0000";
             this.textBox35.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox36
+            // txtPC
             // 
-            this.textBox36.BackColor = System.Drawing.Color.Tan;
-            this.textBox36.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox36.Location = new System.Drawing.Point(33, 19);
-            this.textBox36.Name = "textBox36";
-            this.textBox36.ReadOnly = true;
-            this.textBox36.Size = new System.Drawing.Size(54, 22);
-            this.textBox36.TabIndex = 4;
-            this.textBox36.Text = "FFFF";
-            this.textBox36.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPC.BackColor = System.Drawing.Color.Tan;
+            this.txtPC.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPC.Location = new System.Drawing.Point(33, 19);
+            this.txtPC.Name = "txtPC";
+            this.txtPC.ReadOnly = true;
+            this.txtPC.Size = new System.Drawing.Size(54, 22);
+            this.txtPC.TabIndex = 4;
+            this.txtPC.Text = "0000";
+            this.txtPC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox39
             // 
@@ -475,7 +475,7 @@
             this.textBox39.ReadOnly = true;
             this.textBox39.Size = new System.Drawing.Size(21, 22);
             this.textBox39.TabIndex = 1;
-            this.textBox39.Text = "X0";
+            this.textBox39.Text = "SP";
             this.textBox39.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox40
@@ -487,7 +487,7 @@
             this.textBox40.ReadOnly = true;
             this.textBox40.Size = new System.Drawing.Size(21, 22);
             this.textBox40.TabIndex = 0;
-            this.textBox40.Text = "X0";
+            this.textBox40.Text = "PC";
             this.textBox40.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox1
@@ -497,7 +497,7 @@
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.MinimumSize = new System.Drawing.Size(469, 170);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(738, 170);
+            this.groupBox1.Size = new System.Drawing.Size(693, 170);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registers";
@@ -511,7 +511,7 @@
             this.groupBox6.Controls.Add(this.RecordContainer);
             this.groupBox6.Location = new System.Drawing.Point(12, 197);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(744, 157);
+            this.groupBox6.Size = new System.Drawing.Size(699, 146);
             this.groupBox6.TabIndex = 1;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Records";
@@ -524,7 +524,7 @@
             this.RecordContainer.Location = new System.Drawing.Point(7, 20);
             this.RecordContainer.Multiline = true;
             this.RecordContainer.Name = "RecordContainer";
-            this.RecordContainer.Size = new System.Drawing.Size(731, 131);
+            this.RecordContainer.Size = new System.Drawing.Size(686, 120);
             this.RecordContainer.TabIndex = 1;
             // 
             // RecordBox
@@ -536,7 +536,7 @@
             this.RecordBox.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RecordBox.Location = new System.Drawing.Point(8, 21);
             this.RecordBox.Name = "RecordBox";
-            this.RecordBox.Size = new System.Drawing.Size(729, 129);
+            this.RecordBox.Size = new System.Drawing.Size(684, 118);
             this.RecordBox.TabIndex = 2;
             this.RecordBox.Text = "";
             // 
@@ -545,12 +545,12 @@
             this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox7.Controls.Add(this.ErrorsList);
-            this.groupBox7.Location = new System.Drawing.Point(12, 360);
+            this.groupBox7.Location = new System.Drawing.Point(12, 349);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(744, 90);
+            this.groupBox7.Size = new System.Drawing.Size(699, 90);
             this.groupBox7.TabIndex = 2;
             this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "groupBox7";
+            this.groupBox7.Text = "Errors List";
             // 
             // ErrorsList
             // 
@@ -560,17 +560,18 @@
             this.ErrorsList.FormattingEnabled = true;
             this.ErrorsList.Location = new System.Drawing.Point(7, 20);
             this.ErrorsList.Name = "ErrorsList";
-            this.ErrorsList.Size = new System.Drawing.Size(731, 56);
+            this.ErrorsList.Size = new System.Drawing.Size(686, 56);
             this.ErrorsList.TabIndex = 0;
             // 
             // RecordsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 462);
+            this.ClientSize = new System.Drawing.Size(723, 451);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.panel1);
+            this.MinimumSize = new System.Drawing.Size(367, 449);
             this.Name = "RecordsWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "RecordsWindow";
@@ -601,7 +602,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TextBox textBox35;
-        private System.Windows.Forms.TextBox textBox36;
+        private System.Windows.Forms.TextBox txtPC;
         private System.Windows.Forms.TextBox textBox39;
         private System.Windows.Forms.TextBox textBox40;
         private System.Windows.Forms.GroupBox groupBox4;

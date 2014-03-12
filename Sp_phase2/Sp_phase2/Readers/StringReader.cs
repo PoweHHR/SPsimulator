@@ -19,13 +19,13 @@ namespace SP.Readers
         public override void OpenReadingSession()
         {
 
-           Lines  = code.Split(new string[]{Environment.NewLine},StringSplitOptions.None);
+           Lines  = code.Split(new string[]{Environment.NewLine,"\n"},StringSplitOptions.None);
            i = 0;
         }
         public override void OpenReadingSession(string _code)
         {
             code = _code;
-            Lines = code.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
+            Lines = code.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
             i = 0;
         }
         public override int GetLineCount()
@@ -34,7 +34,9 @@ namespace SP.Readers
         }
         public override string GetNextLine()
         {
+            
             if (i >= Lines.Length) return null;
+            if (Lines[i] == "" || Lines[i].CompareTo("") == 0) return null;
             return Lines[i++];
         }
 

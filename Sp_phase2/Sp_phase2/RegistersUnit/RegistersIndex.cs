@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SP.Registers
 {
-    enum RegistersIndex
+    public enum RegistersIndex
     {
         X0= 0,
         X1= 1,

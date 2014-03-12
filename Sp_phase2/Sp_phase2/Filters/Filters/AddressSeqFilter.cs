@@ -7,7 +7,7 @@ using SP.Records;
 
 namespace SP.Filters
 {
-    public class AddressSeqFilter : Filter
+    class AddressSeqFilter : Filter
     {
         ushort LastAcceptAddress = 0;
         int counter = 0;

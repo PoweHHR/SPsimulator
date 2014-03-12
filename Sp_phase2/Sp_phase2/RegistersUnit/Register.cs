@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SP.Registers
 {
-    class Register
+    public class Register
     {
         #region RegisterData
         private int data;

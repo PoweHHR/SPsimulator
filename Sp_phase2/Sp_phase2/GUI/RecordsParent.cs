@@ -36,7 +36,7 @@ namespace SP.GUI
             if (openFileDialog.ShowDialog(this) == DialogResult.OK)
             {
                 string FileName = openFileDialog.FileName;
-                ((RecordsWindow)this.ActiveMdiChild).LoadFile(FileName);
+                ((RecordsWindow)this.ActiveMdiChild).LoadFileToRecordBox(FileName);
             }
            
         }
@@ -105,6 +105,28 @@ namespace SP.GUI
             {
                 childForm.Close();
             }
+        }
+
+        private void memoryViewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MemoryView memForm = new MemoryView(((RecordsWindow)this.ActiveMdiChild).memUnit);
+       
+            memForm.Show();
+        }
+
+        private void checkForErrorsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ((RecordsWindow)this.ActiveMdiChild).checkforErrors();
+        }
+
+        private void loadToMemoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ((RecordsWindow)this.ActiveMdiChild).LoadFileToMemory();
+        }
+
+        private void executeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ((RecordsWindow)this.ActiveMdiChild).runCode();
         }
     }
 }

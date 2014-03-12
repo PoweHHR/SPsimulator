@@ -4,34 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SP.Records;
-
 namespace SP.Filters
 {
-    class MemoryBoundFilter :Filter
+    class MissingRecord2Filter :Filter
     {
-
         int counter = 0;
         public string Reason;
-
-
         public override ErrorLevel IsValidRecord(Record r, int RecordID, int RecordCount)
         {
-            ushort mem = r.address;
-            if (mem > 65535)
-            {
-                Reason = "Err: Address out of Memory bound, Last address is 0xFFFF";
-                return ErrorLevel.Error;
-            }
 
-            if (mem >= 64512)
+
+            if (r.RecordType == 2) counter++;
+
+            if (RecordID == RecordCount - 1 && counter == 0)
             {
-                Reason = "Err: Address on Stack boundry, Last address available is 0xFBFF";
+                Reason = "no record type 2 in this code , there must be at least one record of type 2 in this code";
                 return ErrorLevel.Error;
-            }
-            if (mem % 2 != 0)
-            {
-                Reason = " Address is odd ";
-                return ErrorLevel.Warning;
             }
             return ErrorLevel.Valid;
         }
