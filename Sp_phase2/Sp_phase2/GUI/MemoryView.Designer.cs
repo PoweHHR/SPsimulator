@@ -33,6 +33,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SuspendLayout();
             // 
             // AddressBox
@@ -78,11 +82,50 @@
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             this.richTextBox1.SelectionChanged += new System.EventHandler(this.richTextBox1_SelectionChanged);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(702, 90);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "FindNext";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(613, 92);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(83, 20);
+            this.txtSearch.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(610, 76);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(165, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Enter short Value in hex to find it";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(609, -6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(2, 417);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
             // MemoryView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 399);
+            this.ClientSize = new System.Drawing.Size(789, 399);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.label1);
@@ -100,5 +143,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
