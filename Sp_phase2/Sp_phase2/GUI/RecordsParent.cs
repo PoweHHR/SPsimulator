@@ -126,7 +126,8 @@ namespace SP.GUI
 
         private void executeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ((RecordsWindow)this.ActiveMdiChild).runCode();
+           // ((RecordsWindow)this.ActiveMdiChild).runCode();
+            ((RecordsWindow)this.ActiveMdiChild).ExcuteCode();
         }
     }
 }

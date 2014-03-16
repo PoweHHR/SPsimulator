@@ -7,3 +7,4 @@ C:\Users\Hosam\Documents\GitHub\SPsimulator\Sp_phase2\Sp_phase2\obj\Debug\SP.GUI
 C:\Users\Hosam\Documents\GitHub\SPsimulator\Sp_phase2\Sp_phase2\obj\Debug\Sp_phase2.csproj.GenerateResource.Cache
 C:\Users\Hosam\Documents\GitHub\SPsimulator\Sp_phase2\Sp_phase2\obj\Debug\SP.GUI.RecordsWindow.resources
 C:\Users\Hosam\Documents\GitHub\SPsimulator\Sp_phase2\Sp_phase2\obj\Debug\SP.GUI.RecordsParent.resources
+C:\Users\Hosam\Documents\GitHub\SPsimulator\Sp_phase2\Sp_phase2\obj\Debug\Sp_phase2.csprojResolveAssemblyReference.cache

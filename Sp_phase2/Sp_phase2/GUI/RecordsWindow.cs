@@ -16,6 +16,7 @@ using SP.Registers;
 using SP.Helpers;
 using SP.GUI;
 using SP.Records;
+using SP.InstructionsUnit;
 
 namespace SP.GUI
 {
@@ -181,11 +182,22 @@ namespace SP.GUI
             {
                 for (int i = 0; i < records.Count; i++)
                 {
-                    if (records[i].RecordType !=1)
-                    memUnit.WriteBytesAtAddress(records[i].address, records[i].data);
+                    if (records[i].RecordType != 1)
+                        memUnit.WriteBytesAtAddress(records[i].address, records[i].data);
+                    else
+                        memUnit.setshortAt(0, records[i].address);
                 }
             }
         }
-    
+
+
+        public void ExcuteCode()
+        {
+            InstructionExcuter exec = new InstructionExcuter(memUnit, regs);
+            exec.OpenExcutionSession(false);
+            while (exec.ExecuteNextInstruction()) ;
+            MessageBox.Show("X4: " + regs[RegistersIndex.X4].value.ToString("X4"));
+
+        }
     }
 }

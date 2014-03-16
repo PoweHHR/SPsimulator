@@ -10,8 +10,14 @@ namespace SP.Readers
 {
     public class FileReader : Reader
     {
+        /// <summary>
+        /// file handler points the file structure in the opertaion system
+        /// </summary>
         StreamReader fd=null;
         string fs;
+        /// <summary>
+        /// Create session of reading file passed on it's path
+        /// </summary>
         public FileReader(string FilePath){
             //StreamReader fd = new StreamReader(FilePath);
             fs = FilePath;
@@ -19,9 +25,13 @@ namespace SP.Readers
 
 
         /// <summary>
-        /// this is extensive function call it once
+        /// gives the number os lines in the file
         /// </summary>
-        /// <returns></returns>
+        /// <remarks>
+        /// this function opens the file when called and scans all newLine marks 
+        /// so this is extensive function call it once.
+        /// </remarks>
+        /// <returns>returns the number of lines in the files</returns>
         public override int GetLineCount()
         {
             int i =0;

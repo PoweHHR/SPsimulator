@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SP.Exceptions.ParseException" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\Exceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.Exceptions.IlligalRecordTypeException" Collapsed="true">
+    <Position X="0.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\Exceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.Exceptions.RecordFormatException" Collapsed="true">
+    <Position X="3" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\Exceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.Exceptions.EmptyRecordLineException" Collapsed="true">
+    <Position X="5.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\Exceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.Exceptions.MissingRecordParameters" Collapsed="true">
+    <Position X="7.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\Exceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.Filters.Filter" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgCAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filters\Filter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.Filters.AddressSeqFilter" Collapsed="true">
+    <Position X="3.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAgCAACAAAAAAAEAAAAAAAgAAAA=</HashCode>
+      <FileName>Filters\Filters\AddressSeqFilter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.Filters.ByteCountFilter" Collapsed="true">
+    <Position X="5.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAgCAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filters\Filters\ByteCountFilter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.Filters.CheckSumFilter" Collapsed="true">
+    <Position X="7.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAgCAACAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Filters\Filters\CheckSumFilter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.Filters.MissingType1filter" Collapsed="true">
+    <Position X="10" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAgCAACAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Filters\Filters\MissingType1Filter.cs</FileName>
+      <NewMemberFileName>Filters\Filters\duplicateRecorcdType1Filter.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.Filters.MemoryBoundFilter" Collapsed="true">
+    <Position X="12.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAgCAACAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Filters\Filters\MemoryBoundFilter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.Filters.MissingRecord2Filter" Collapsed="true">
+    <Position X="1" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAgCAACAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Filters\Filters\MissingRecord2Filter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.GUI.MemoryView" Collapsed="true">
+    <Position X="20" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACABAAACAAABAAAACCAAACAAAIgAAAEGAQCAACAAA=</HashCode>
+      <FileName>GUI\MemoryView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.GUI.RecordsParent" Collapsed="true">
+    <Position X="18.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BJCgCv0AhCEAEAEICiC2wMdSjABBAswBCkwARzAAQGc=</HashCode>
+      <FileName>GUI\RecordsParent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.GUI.RecordsWindow" Collapsed="true">
+    <Position X="20" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QCCCAAEAASAAAACAEICCEABCMAAEICgAEiAAASAIAIA=</HashCode>
+      <FileName>GUI\RecordsWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.Helpers.Helper" Collapsed="true">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Helper\Helper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.MemoryUnit.Memory" Collapsed="true">
+    <Position X="18.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAgAQAAAAAABBAAACIQAAAEgAQAAAAAACAAAAAAAAEA=</HashCode>
+      <FileName>MemoryUnit\Memory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.Program" Collapsed="true">
+    <Position X="14.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.Readers.FileReader" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAIABAAAAAAAAIAAAAABAAA=</HashCode>
+      <FileName>Readers\FileReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.Readers.Reader">
+    <Position X="1.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAIABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Readers\Reader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.Readers.StringReader" Collapsed="true">
+    <Position X="2.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAIAJAAAAAACIAAAAAAAAAA=</HashCode>
+      <FileName>Readers\StringReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.Records.LineParser" Collapsed="true">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Records\LineParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.Records.Record">
+    <Position X="11.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAABAAAAAAAAAIAAAAAAAAQAAEAAAA=</HashCode>
+      <FileName>Records\Record.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.Registers.Register" Collapsed="true">
+    <Position X="14.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAACABAAAQAAAAAAA=</HashCode>
+      <FileName>RegistersUnit\Register.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.Registers.Registers" Collapsed="true">
+    <Position X="16.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RegistersUnit\Registers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="SP.Filters.ErrorLevel" Collapsed="true">
+    <Position X="14.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAABAAAAQAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Filters\Filter.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SP.Registers.RegistersIndex" Collapsed="true">
+    <Position X="16.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAIAAAAAIBAAAAAIAAAAAAQGAAAAAAABA=</HashCode>
+      <FileName>RegistersUnit\RegistersIndex.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

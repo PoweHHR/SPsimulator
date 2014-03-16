@@ -14,6 +14,18 @@ namespace SP.Records
 
 
         //throws: RecordformatException, IlligalRecordTypeException
+        /// <summary>
+        /// takes line string represents the record , checks for any syntax errors , then extract the infromation and export it as Record Object
+        /// </summary>
+        /// <remarks>
+        /// if the function failed to parse the record it could throw one of the following exceptions: 
+        /// 1-MissingRecordParameters
+        /// 2-RecordFormatException
+        /// 3-IlligalRecordTypeException
+        /// 4-EmptyRecordLineException
+        /// </remarks>
+        /// <param name="recordStr">string line represents the record</param>
+        /// <returns>return Record object contains the infromation about the record parsed from the line</returns>
         public Record TryParseLine(string recordStr)
         {
             //StringBuilder str = new StringBuilder(recordStr);
@@ -27,11 +39,14 @@ namespace SP.Records
                 r.RecordType = byte.Parse(recordStr.Substring(0,1));
                 if (recordStr.Length < 4) throw new MissingRecordParameters("the record contains missing parameters; byte count is missing");
                 if (recordStr[1] != '-') throw new RecordFormatException("missing dash character from the record at pos.2");
-                if (recordStr[4] != ' ') throw new RecordFormatException("missing space character from the record at pos.5");
 
                 if (!Helper.ValidHexChar(recordStr, 2, 2)) throw new RecordFormatException("Byte count in the record contains iilligal characters at pos.3&4");
                 r.count = Convert.ToByte(recordStr.Substring(2, 2), 16);
 
+                if (recordStr.Length < 5) throw new RecordFormatException("missing space character from the record at pos.5");
+                if (recordStr[4] != ' ') throw new RecordFormatException("missing space character from the record at pos.5");
+
+               
                 if (recordStr.Length < 9) throw new MissingRecordParameters("The record contains missing parameters; the address is missing");
                 if (!Helper.ValidHexChar(recordStr, 5, 4)) throw new RecordFormatException("address feild in the record contains iilligal characters at pos.6to9");
                 r.address = Convert.ToUInt16(recordStr.Substring(5, 4), 16);
@@ -51,9 +66,10 @@ namespace SP.Records
                     if (recordStr.Length < 10) throw new MissingRecordParameters("the record contains missing parameters;instruction data is missing");  
                     if  (recordStr[9] != '*') throw new RecordFormatException("missing star * character from the record at pos.10");
                     for (i = 10; i < recordStr.Length; i++) { if (recordStr[i] == '*') break; }
-                    if (i == recordStr.Length || i ==10 || i ==11) throw new RecordFormatException("missing the closing star!code of the instruction cannot be determined");
+                    if (i == recordStr.Length ) throw new RecordFormatException("missing the closing star!code of the instruction cannot be determined");
                              
-                    if ((i - 10) % 2 != 0) throw new RecordFormatException("code of the instruction contains iilligal characters at pos.11to" + i);
+                    if ((i - 10) % 2 != 0 ) throw new RecordFormatException("code of the instruction contains odd number of characters at pos.11to" + i +"; failed to parse as bytes");
+                    if (i - 9 == 1) throw new RecordFormatException("the record contains missing parameters;instruction data is missing");
                     if (!Helper.ValidHexChar(recordStr, 10, (i) -10   )) throw new RecordFormatException("code of the instruction contains iilligal characters at pos.11to" + i );
                     byte[] bytes = new Byte[(i-10)/2];
 

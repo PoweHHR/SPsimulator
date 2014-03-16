@@ -7,33 +7,27 @@ using SP.Records;
 
 namespace SP.Filters
 {
-    class MemoryBoundFilter :Filter
+    class MissingType1filter : Filter
     {
-
         int counter = 0;
         public string Reason;
-
-
         public override ErrorLevel IsValidRecord(Record r, int RecordID, int RecordCount)
         {
-            ushort mem = r.address;
-            if (mem > 65535)
+            if (r.RecordType == 1) counter++;
+
+            if (RecordID == 0 && counter ==0 && RecordID != RecordCount - 1)
             {
-                Reason = "Err: Address out of Memory bound, Last address is 0xFFFF";
-                return ErrorLevel.Error;
+                Reason = "Record type 1 should be at the begining of the code.";
+                return ErrorLevel.Warning;
             }
 
-            if (mem >= 64512)
+            if (RecordID == RecordCount - 1 && counter == 0)
             {
-                Reason = "Err: Address on Stack boundry, Last address available is 0xFBFF";
+                Reason = "Missing record type 1; there must be one record type 1 in the code";
                 return ErrorLevel.Error;
             }
-            if (mem % 2 != 0)
-            {
-                Reason = " Address is odd it must be on even address because the memory is word addressable ";
-                return ErrorLevel.Error;
-            }
-            return ErrorLevel.Valid;
+            else
+                return ErrorLevel.CannotDetermine;
         }
         public override string GetReason()
         {
@@ -43,5 +37,7 @@ namespace SP.Filters
         {
             return ErrorLevel.Error;
         }
+
+
     }
 }

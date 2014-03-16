@@ -1,0 +1,78 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using SP.MemoryUnit;
+using SP.Registers;
+
+
+
+namespace SP.InstructionsUnit
+{
+    
+    public class InstructionExcuter
+    {
+        public List<Instruction> Instructions = new List<Instruction>();
+
+        public Fetch fetcher;
+        int i = 0;
+        bool strRev = false;
+        bool realExcu = false;
+        Memory mem;
+        Registers.Registers regs;
+        ushort CurrentPC;
+        public InstructionExcuter(Memory _mem,Registers.Registers _regs)
+        {
+            mem = _mem;
+            regs= _regs;
+            fetcher = new Fetch(_mem, _regs);
+            Instruction.AssignUnits(_regs,_mem);
+            Instruction.instructionNeedsTwoBytes += new InstructionNeedsExtraTwoBytes(ExtraTwoBytesGetter);
+            Instruction.instructionFinsihed += new InstructionExcutionFinished(FinishedTemp);
+            Instructions.Add(new Instructions.OR());
+        
+        }
+        private void FinishedTemp(IexcRes r)
+        {
+        }
+        private ushort ExtraTwoBytesGetter(Instruction caller)
+        {
+            return fetcher.FetchNextWord();
+        }
+        public void OpenReverseEngineeringSession()
+        {
+            i = 0;
+            strRev = true;
+            realExcu = false;
+            CurrentPC = regs[RegistersIndex.PC].value;
+            regs[RegistersIndex.PC].value = mem.getshortAt(0);
+
+        }
+        public void OpenExcutionSession(bool withString)
+        {
+            strRev = withString;
+            realExcu = true;
+            i = 0;
+            CurrentPC = regs[RegistersIndex.PC].value;
+            regs[RegistersIndex.PC].value = mem.getshortAt(0);
+        }
+
+        public bool ExecuteNextInstruction()
+        {
+            Decode d = Decode.DecodeInstruction(fetcher.FetchNextWord());
+            FuncCatchRes res;
+            foreach (Instruction x in Instructions)
+            {
+                res = x.ProcessDecodedInstruction(d,strRev,realExcu,true,i);
+                if (res == FuncCatchRes.Catched) return true;
+                if (res == FuncCatchRes.Halt   ) return false;
+            }
+
+            return false;//can not read more
+        }
+
+
+
+    }
+}
