@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SP.Registers
+namespace SP.RegistersUnit
 {
     public enum RegistersIndex
     {
@@ -17,7 +17,8 @@ namespace SP.Registers
         X6= 6,
         X7= 7,
         PC= 8,
-        SP= 9
+        SP= 9,
+        CR=10
     }
 
 

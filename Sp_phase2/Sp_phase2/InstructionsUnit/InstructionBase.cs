@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SP.MemoryUnit;
-using SP.Registers;
+using SP.RegistersUnit;
 
 
 namespace SP.InstructionsUnit
@@ -16,7 +16,6 @@ namespace SP.InstructionsUnit
         public Instruction caller;
         public string revStr;
         public int id;
-
     }
     public enum FuncCatchRes
     {
@@ -27,16 +26,16 @@ namespace SP.InstructionsUnit
 
     public delegate void   InstructionExcutionFinished(IexcRes res);
     public delegate ushort InstructionNeedsExtraTwoBytes(Instruction caller);
-    public abstract class Instruction
+    public abstract class  Instruction
     {
         private string FuncStr;
         private ushort funcOpcode;
 
         //tools for the programmer of the instruction
-        private static Registers.Registers regs;
-        private static Memory       memUnit;
+        private static Registers regs;
+        private static Memory    memUnit;
 
-        public static void AssignUnits(Registers.Registers _reg, Memory _mem)
+        public static void AssignUnits(Registers _reg, Memory _mem)
         {
             regs = _reg;
             memUnit = _mem;
@@ -58,7 +57,7 @@ namespace SP.InstructionsUnit
             if (instr.opcode == (ushort)InstructionTypes.HLT) return FuncCatchRes.Halt;
             return FuncCatchRes.Catched ;
         }
-        protected abstract IexcRes ProcessTheInstruction(Decode instr, bool strRev, bool realExcute, bool CallInSerial, int id,Memory mem,Registers.Registers regs);
+        protected abstract IexcRes ProcessTheInstruction(Decode instr, bool strRev, bool realExcute, bool CallInSerial, int id,Memory mem,Registers regs);
         
 
 

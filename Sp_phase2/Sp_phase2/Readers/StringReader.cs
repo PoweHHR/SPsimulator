@@ -19,7 +19,7 @@ namespace SP.Readers
         public override void OpenReadingSession()
         {
 
-           Lines  = code.Split(new string[]{Environment.NewLine,"\n"},StringSplitOptions.None);
+           Lines  = code.Split(new string[]{Environment.NewLine,"\n"},StringSplitOptions.RemoveEmptyEntries);
            i = 0;
         }
         public override void OpenReadingSession(string _code)

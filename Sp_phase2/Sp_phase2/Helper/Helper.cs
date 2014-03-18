@@ -40,6 +40,15 @@ namespace SP.Helpers
             return true;
         }
 
+        public static int SetBit(int data,int bitIndex){
+          
+            return (data | (1 <<bitIndex));
+        }
+        public static int ClearBit(int data, int bitIndex)
+        {
+            return (data &  ~(1 << bitIndex));
+        }
+
 
     }
 

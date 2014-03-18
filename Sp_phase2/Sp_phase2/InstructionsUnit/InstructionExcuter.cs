@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SP.MemoryUnit;
-using SP.Registers;
+using SP.RegistersUnit;
 
 
 
@@ -20,9 +20,9 @@ namespace SP.InstructionsUnit
         bool strRev = false;
         bool realExcu = false;
         Memory mem;
-        Registers.Registers regs;
+        Registers regs;
         ushort CurrentPC;
-        public InstructionExcuter(Memory _mem,Registers.Registers _regs)
+        public InstructionExcuter(Memory _mem,Registers _regs)
         {
             mem = _mem;
             regs= _regs;

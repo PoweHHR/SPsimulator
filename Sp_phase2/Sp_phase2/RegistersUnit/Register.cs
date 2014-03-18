@@ -4,10 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SP.Registers
+namespace SP.RegistersUnit
 {
     public class Register
     {
+#region DEFINE
+        public const ushort Z           = 0x0000;
+        public const ushort V           = 0x0001;
+        public const ushort N           = 0x0002;
+        public const ushort C           = 0x0003;
+        public const ushort byteSignBit = 0x0007;
+        public const ushort shortSignBit= 0x0010;
+
+#endregion
         #region RegisterData
         private int data;
         public byte lowByte{
@@ -46,7 +55,23 @@ namespace SP.Registers
         #endregion
 
         #region RegisterManipulations
-        
+        public ushort this [ushort bitIndex]
+        {
+            set{
+                if (value !=0)
+                    data = data | (1 << bitIndex);
+                else
+                    data =data & ~(1 << bitIndex);
+            }
+            get{
+
+                return (ushort)(data & (1 << bitIndex));
+            }
+
+        }
+
+
+
         
         #endregion
 

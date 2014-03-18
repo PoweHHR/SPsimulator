@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SP.MemoryUnit;
-using SP.Registers;
+using SP.RegistersUnit;
 
 
 namespace SP.InstructionsUnit
@@ -12,16 +12,16 @@ namespace SP.InstructionsUnit
     public class Fetch
     {
         Memory memUnit;
-        Registers.Registers regUnit;
+        Registers regUnit;
         public Fetch()
         {
         }
-        public Fetch(Memory memRefrence,Registers.Registers regsRef)
+        public Fetch(Memory memRefrence,Registers regsRef)
         {
             regUnit = regsRef;
             memUnit = memRefrence;
         }
-        public void AssignMemoryandRegRefrence(Memory memRefrence,Registers.Registers regsRef)
+        public void AssignMemoryandRegRefrence(Memory memRefrence,Registers regsRef)
         {
             regUnit = regsRef;
             memUnit = memRefrence;

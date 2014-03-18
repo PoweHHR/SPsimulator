@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SP.Registers
+namespace SP.RegistersUnit
 {
     public class Registers
     {
@@ -12,7 +12,7 @@ namespace SP.Registers
         Register[] regs;
         public Registers()
         {
-            regs = new Register[12];
+            regs = new Register[11];
             for (int i = 0; i < regs.Length; i++)
             {
                 regs[i] = new Register();
@@ -26,6 +26,9 @@ namespace SP.Registers
                 return regs[(int)idx];
             }
         }
+
+
+
 
     }
 }

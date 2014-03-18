@@ -102,14 +102,14 @@
   <Class Name="SP.GUI.RecordsWindow" Collapsed="true">
     <Position X="20" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QCCCAAEAASAAAACAEICCEABCMAAEICgAEiAAASAIAIA=</HashCode>
+      <HashCode>QCCCAAEAASAAAACAEICCEABCMAAEICgAEiAAASAIAoA=</HashCode>
       <FileName>GUI\RecordsWindow.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SP.Helpers.Helper" Collapsed="true">
     <Position X="14.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAgAAAAAAQAAA=</HashCode>
       <FileName>Helper\Helper.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -162,14 +162,14 @@
       <FileName>Records\Record.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SP.Registers.Register" Collapsed="true">
+  <Class Name="SP.RegistersUnit.Register" Collapsed="true">
     <Position X="14.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAACABAAAQAAAAAAA=</HashCode>
+      <HashCode>AAAAQAAACAAAAAAACAAgAAAAAAAAACABAAAQgBAQAAE=</HashCode>
       <FileName>RegistersUnit\Register.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SP.Registers.Registers" Collapsed="true">
+  <Class Name="SP.RegistersUnit.Registers" Collapsed="true">
     <Position X="16.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAACAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
@@ -183,10 +183,10 @@
       <FileName>Filters\Filter.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="SP.Registers.RegistersIndex" Collapsed="true">
+  <Enum Name="SP.RegistersUnit.RegistersIndex" Collapsed="true">
     <Position X="16.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAIAAAAIAAAAAIBAAAAAIAAAAAAQGAAAAAAABA=</HashCode>
+      <HashCode>AAAAAAAIAAAAIAAAAAIBAAAAAICAAAAAQGAAAAAAABA=</HashCode>
       <FileName>RegistersUnit\RegistersIndex.cs</FileName>
     </TypeIdentifier>
   </Enum>

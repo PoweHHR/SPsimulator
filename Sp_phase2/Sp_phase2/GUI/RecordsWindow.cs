@@ -12,7 +12,7 @@ using SP.Exceptions;
 using SP.Filters;
 using SP.MemoryUnit;
 using SP.Readers;
-using SP.Registers;
+using SP.RegistersUnit;
 using SP.Helpers;
 using SP.GUI;
 using SP.Records;
@@ -23,9 +23,9 @@ namespace SP.GUI
     public partial class RecordsWindow : Form
     {
 
-        public Memory memUnit = new Memory();
-        List<Record> records = new List<Record>();
-        public SP.Registers.Registers regs = new Registers.Registers();
+        public Memory     memUnit = new Memory();
+        List<Record>      records = new List<Record>();
+        public Registers  regs = new Registers();
         public FileReader fReader;
 
         

@@ -36,7 +36,11 @@ namespace SP.Readers
         {
             int i =0;
             StreamReader r = new StreamReader(fs);
-            while (!r.EndOfStream) { r.ReadLine(); i++; }
+            string s;
+            while (!r.EndOfStream) {
+                s = r.ReadLine();
+                if (s != "" && s.Length > 0) i++;
+            }
             r.Close();
             return i;
 
