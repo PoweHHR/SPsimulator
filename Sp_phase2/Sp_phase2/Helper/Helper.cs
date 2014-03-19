@@ -59,6 +59,17 @@ namespace SP.Helpers
                 return (ushort)(d12 & 0x0FFF);
             }
         }
+        public static ushort Extend8bit(ushort d8)
+        {
+            if ((d8 & 0x0080) == 0x0080)
+            {
+                return (ushort)(d8 | 0xFF00);
+            }
+            else
+            {
+                return (ushort)(d8 & 0x00FF);
+            }
+        }
 
     }
 

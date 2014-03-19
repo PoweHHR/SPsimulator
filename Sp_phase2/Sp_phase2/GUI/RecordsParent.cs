@@ -30,8 +30,10 @@ namespace SP.GUI
 
         private void OpenFile(object sender, EventArgs e)
         {
+            RecordsWindow f = ((RecordsWindow)this.ActiveMdiChild);
+            if (f == null) return;
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            
             openFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
             if (openFileDialog.ShowDialog(this) == DialogResult.OK)
             {
@@ -59,14 +61,37 @@ namespace SP.GUI
 
         private void CutToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            RecordsWindow f = ((RecordsWindow)this.ActiveMdiChild);
+            if (f != null)
+            {
+                if (f.getRichEditBox().SelectionLength>0)
+                {
+                    f.getRichEditBox().Cut();
+                }
+            }
         }
 
         private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            RecordsWindow f = ((RecordsWindow)this.ActiveMdiChild);
+            if (f != null)
+            {
+                if (f.getRichEditBox().SelectionLength > 0)
+                    f.getRichEditBox().Copy();   
+            }
+
         }
 
         private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            RecordsWindow f = ((RecordsWindow)this.ActiveMdiChild);
+            if (f != null)
+            {
+                if (Clipboard.GetDataObject().GetDataPresent(DataFormats.Text))
+                {
+                    f.getRichEditBox().Paste();
+                }
+            }
         }
 
         private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -128,6 +153,44 @@ namespace SP.GUI
         {
            // ((RecordsWindow)this.ActiveMdiChild).runCode();
             ((RecordsWindow)this.ActiveMdiChild).ExcuteCode();
+        }
+
+        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RecordsWindow f = ((RecordsWindow)this.ActiveMdiChild);
+            if (f != null)
+            {
+                if (f.getRichEditBox().CanUndo)
+                {
+                    f.getRichEditBox().Undo();
+                    f.getRichEditBox().ClearUndo();
+                }   
+            }
+        }
+
+        private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RecordsWindow f = ((RecordsWindow)this.ActiveMdiChild);
+            if (f != null)
+            {
+                if (f.getRichEditBox().TextLength>0)
+                {
+                    f.getRichEditBox().SelectAll();
+                }
+            }
+        }
+
+        private void redoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RecordsWindow f = ((RecordsWindow)this.ActiveMdiChild);
+            if (f != null)
+            {
+                if (f.getRichEditBox().CanRedo)
+                {
+                    f.getRichEditBox().Redo()
+                    ;
+                }
+            }
         }
     }
 }

@@ -8,7 +8,7 @@ namespace SP.Filters
 {
     class CheckSumFilter : Filter
     {
-        int counter = 0;
+       // int counter = 0;
         public string Reason;
         public override ErrorLevel IsValidRecord(Record r, int RecordID, int RecordCount)
         {
