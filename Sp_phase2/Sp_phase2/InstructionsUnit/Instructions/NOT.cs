@@ -41,7 +41,7 @@ namespace SP.InstructionsUnit.Instructions
                     {
                         regs[instr.rd].value = ((ushort) ~bytes);
                         bytes = regs[instr.rd].value;
-                        if ((bytes & 0x8000) == Register.shortSignBit)
+                        if ((bytes & 0x8000) == 0x8000)
                             regs[RegistersIndex.CR][Register.N] = 1;
                         else
                             regs[RegistersIndex.CR][Register.N] = 0;

@@ -70,6 +70,7 @@ namespace SP.Helpers
                 return (ushort)(d8 & 0x00FF);
             }
         }
+
     }
 
 }

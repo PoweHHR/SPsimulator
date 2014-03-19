@@ -14,7 +14,7 @@ namespace SP.InstructionsUnit.Instructions
         protected override IexcRes ProcessTheInstruction(Decode instr, bool strRev, bool realExcute, bool CallInSerial, int id, MemoryUnit.Memory mem, Registers regs)
         {
             IexcRes res = new IexcRes();
-            ushort nBytes = 0;
+            //ushort nBytes = 0;
             if (strRev)
             {
                 res.revStr = this.FuncStr;
@@ -25,8 +25,8 @@ namespace SP.InstructionsUnit.Instructions
             if (realExcute)
                 if (instr.addressingMode == Decode.AddressingRegister)
                 {
-                   
-                
+
+
 
                     if (instr.sizeAndR == Decode.SizeWord)
                     {
@@ -44,7 +44,7 @@ namespace SP.InstructionsUnit.Instructions
                                 regs[RegistersIndex.CR][Register.Z] = 1;
                             else
                                 regs[RegistersIndex.CR][Register.Z] = 0;
-                           
+
                         }
                     }
                     else

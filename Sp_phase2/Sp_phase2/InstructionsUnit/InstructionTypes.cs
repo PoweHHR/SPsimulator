@@ -14,13 +14,14 @@ namespace SP.InstructionsUnit
         OR      = 0x5800,
         HLT     = 0xE000,
         LSP     = 0x1000,
+        NOT     = 0x5000,
+        PUSH    = 0x7800,
+        POP     = 0x8000,
+        EXG     = 0x1800,
         ADD     = 0x2000,
         SUB     = 0x2800,
         MULS    = 0x3000,
-        MIN     = 0x4000,
         DIVU    = 0x3800,
-        PUSH    = 0x7800,
-        POP     = 0x8000,
-        NOT     = 0x5000
+        MIN     = 0x4000
     }
 }

@@ -10,7 +10,7 @@ namespace SP.Filters
     class MemoryBoundFilter :Filter
     {
 
-        int counter = 0;
+       // int counter = 0;
         public string Reason;
 
 

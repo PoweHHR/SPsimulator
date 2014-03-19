@@ -18,7 +18,7 @@ namespace SP.InstructionsUnit.Instructions
             if (strRev)
             {
                 res.revStr = this.FuncStr;
-            //    if (instr.sizeAndR == Decode.SizeWord) res.revStr += ".W";
+                //    if (instr.sizeAndR == Decode.SizeWord) res.revStr += ".W";
                 res.revStr += " " + instr.rd.ToString() + ",";
                 if (instr.addressingMode == Decode.AddressingRegister)
                     res.revStr += instr.rs.ToString();
@@ -33,28 +33,28 @@ namespace SP.InstructionsUnit.Instructions
                     if (instr.addressingMode == Decode.AddressingImmediate)
                         bytes = nBytes = GetExtra2Bytes(this);
                     else
-                        bytes =(byte) regs[instr.rs].value;
+                        bytes = (byte)regs[instr.rs].value;
 
-                    ushort rs =(byte) regs[instr.rd].value;
+                    ushort rs = (byte)regs[instr.rd].value;
 
                     ushort TempRes = (ushort)((sbyte)rs * (sbyte)bytes);
-                 
-                      
-                        regs[instr.rd].value =TempRes;
 
-                        
-                        // bytes = regs[instr.rd].lowByte;
-                        if ((TempRes & 0x8000) == 0x8000)
-                            regs[RegistersIndex.CR][Register.N] = 1;
-                        else
-                            regs[RegistersIndex.CR][Register.N] = 0;
-                        if (TempRes == 0)
-                            regs[RegistersIndex.CR][Register.Z] = 1;
-                        else
-                            regs[RegistersIndex.CR][Register.Z] = 0;
-                     
 
-                    
+                    regs[instr.rd].value = TempRes;
+
+
+                    // bytes = regs[instr.rd].lowByte;
+                    if ((TempRes & 0x8000) == 0x8000)
+                        regs[RegistersIndex.CR][Register.N] = 1;
+                    else
+                        regs[RegistersIndex.CR][Register.N] = 0;
+                    if (TempRes == 0)
+                        regs[RegistersIndex.CR][Register.Z] = 1;
+                    else
+                        regs[RegistersIndex.CR][Register.Z] = 0;
+
+
+
                 }
 
 

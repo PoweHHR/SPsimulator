@@ -32,6 +32,10 @@ namespace SP.GUI
         public RecordsWindow()
         {
             InitializeComponent();
+            RecordBox.ShortcutsEnabled = true;
+            RecordBox.AllowDrop = true;
+            RecordBox.AcceptsTab = true;
+
         }
 
         private void RecordsWindow_Resize(object sender, EventArgs e)
@@ -42,6 +46,11 @@ namespace SP.GUI
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        public RichTextBox getRichEditBox()
+        {
+            return this.RecordBox;
         }
 
         public void runCode()
@@ -93,7 +102,7 @@ namespace SP.GUI
 
             string Line;
             LineParser parser = new LineParser();
-            bool NoErrorsFound = true;
+            //bool NoErrorsFound = true;
             string Data = "";
             while ((Line = fReader.GetNextLine()) != null)
             {
@@ -115,11 +124,11 @@ namespace SP.GUI
                     }
 
 
-
+                  //  NoErrorsFound = true;
                 }
                 catch (ParseException e)
                 {
-                    NoErrorsFound = false;
+                   // NoErrorsFound = false;
                     ErrorsList.Items.Add("Error: "+ e.Message + "(Line." + LineCounter + ")");
                 }
             }

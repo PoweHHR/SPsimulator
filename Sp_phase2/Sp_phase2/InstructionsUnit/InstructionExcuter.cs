@@ -38,6 +38,9 @@ namespace SP.InstructionsUnit
             Instructions.Add(new Instructions.NOT());
             Instructions.Add(new Instructions.LSP());
             Instructions.Add(new Instructions.HLT());
+
+
+
         
         }
         public void DestroyExcuter()

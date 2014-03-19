@@ -11,14 +11,14 @@ namespace SP.InstructionsUnit.Instructions
     class MIN : Instruction
     {
         public MIN() : base("MIN", InstructionTypes.MIN) { }
-             protected override IexcRes ProcessTheInstruction(Decode instr, bool strRev, bool realExcute, bool CallInSerial, int id, MemoryUnit.Memory mem, Registers regs)
+        protected override IexcRes ProcessTheInstruction(Decode instr, bool strRev, bool realExcute, bool CallInSerial, int id, MemoryUnit.Memory mem, Registers regs)
         {
             IexcRes res = new IexcRes();
             ushort nBytes = 0;
             if (strRev)
             {
                 res.revStr = this.FuncStr;
-            //    if (instr.sizeAndR == Decode.SizeWord) res.revStr += ".W";
+                //    if (instr.sizeAndR == Decode.SizeWord) res.revStr += ".W";
                 res.revStr += " " + instr.rd.ToString() + ",";
                 if (instr.addressingMode == Decode.AddressingRegister)
                     res.revStr += instr.rs.ToString();
@@ -37,7 +37,7 @@ namespace SP.InstructionsUnit.Instructions
                     if (instr.sizeAndR == Decode.SizeWord)
                     {
                         ushort TempRes;
-                        Int16 rd =(Int16) regs[instr.rd].value;
+                        Int16 rd = (Int16)regs[instr.rd].value;
                         Int16 rs = (Int16)bytes;
                         TempRes = regs[instr.rd].value = (ushort)Math.Min(rs, rd);
 
@@ -71,7 +71,7 @@ namespace SP.InstructionsUnit.Instructions
                         else
                             regs[RegistersIndex.CR][Register.Z] = 0;
                     }
-                    
+
                 }
 
 
@@ -89,4 +89,4 @@ namespace SP.InstructionsUnit.Instructions
             return res;
         }
     }
-    }
+}
