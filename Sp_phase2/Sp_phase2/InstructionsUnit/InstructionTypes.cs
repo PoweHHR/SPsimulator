@@ -19,6 +19,8 @@ namespace SP.InstructionsUnit
         MULS    = 0x3000,
         MIN     = 0x4000,
         DIVU    = 0x3800,
+        PUSH    = 0x7800,
+        POP     = 0x8000,
         NOT     = 0x5000
     }
 }

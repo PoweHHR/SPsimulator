@@ -101,6 +101,8 @@
     <Compile Include="InstructionsUnit\Instructions\MIN.cs" />
     <Compile Include="InstructionsUnit\Instructions\MULS.cs" />
     <Compile Include="InstructionsUnit\Instructions\NOT.cs" />
+    <Compile Include="InstructionsUnit\Instructions\POP.cs" />
+    <Compile Include="InstructionsUnit\Instructions\PUSH.cs" />
     <Compile Include="InstructionsUnit\Instructions\STR.cs" />
     <Compile Include="InstructionsUnit\Instructions\LD.cs" />
     <Compile Include="InstructionsUnit\Instructions\OR.cs" />
