@@ -14,6 +14,9 @@ namespace SP.InstructionsUnit
         OR      = 0x5800,
         HLT     = 0xE000,
         LSP     = 0x1000,
+        ADD     = 0x2000,
+        SUB     = 0x2800,
+        MULS    = 0x3000,
         NOT     = 0x5000
     }
 }
