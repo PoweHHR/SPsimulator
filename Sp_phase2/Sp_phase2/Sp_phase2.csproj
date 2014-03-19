@@ -95,6 +95,7 @@
     <Compile Include="InstructionsUnit\InstructionExcuter.cs" />
     <Compile Include="InstructionsUnit\Instructions\ADD.cs" />
     <Compile Include="InstructionsUnit\Instructions\AND.cs" />
+    <Compile Include="InstructionsUnit\Instructions\EXG.cs" />
     <Compile Include="InstructionsUnit\Instructions\MIN.cs" />
     <Compile Include="InstructionsUnit\Instructions\DIVU.cs" />
     <Compile Include="InstructionsUnit\Instructions\HLT.cs" />
@@ -109,6 +110,11 @@
     <Compile Include="InstructionsUnit\Instructions\SUB.cs" />
     <Compile Include="InstructionsUnit\InstructionTypes.cs" />
     <Compile Include="MemoryUnit\Memory.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Readers\FileReader.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -133,6 +139,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\RecordsWindow.resx">
       <DependentUpon>RecordsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

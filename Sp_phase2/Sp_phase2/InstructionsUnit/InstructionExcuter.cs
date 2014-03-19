@@ -23,14 +23,15 @@ namespace SP.InstructionsUnit
         Registers regs;
         ushort CurrentPC;
         public event InstructionExcutionFinished instructionFinsihed;
+        public bool IsSessionStarted = false;
         public InstructionExcuter(Memory _mem,Registers _regs)
         {
             mem = _mem;
             regs= _regs;
             fetcher = new Fetch(_mem, _regs);
             Instruction.AssignUnits(_regs,_mem);
-            Instruction.instructionNeedsTwoBytes += new InstructionNeedsExtraTwoBytes(ExtraTwoBytesGetter);
-            Instruction.instructionFinsihed += new InstructionExcutionFinished(FinishedTemp);
+            //Instruction.instructionNeedsTwoBytes += new InstructionNeedsExtraTwoBytes(ExtraTwoBytesGetter);
+            //Instruction.instructionFinsihed += new InstructionExcutionFinished(FinishedTemp);
 
             Instructions.Add(new Instructions.ADD());
             Instructions.Add(new Instructions.AND());
@@ -46,19 +47,27 @@ namespace SP.InstructionsUnit
             Instructions.Add(new Instructions.PUSH());
             Instructions.Add(new Instructions.STR());
             Instructions.Add(new Instructions.SUB());
+            Instructions.Add(new Instructions.EXG());
 
+            foreach (Instruction x in Instructions)
+            {
+                x.instructionNeedsTwoBytes += new InstructionNeedsExtraTwoBytes(ExtraTwoBytesGetter);
+                x.instructionFinsihed += new InstructionExcutionFinished(FinishedTemp);
+            }
 
         
         }
         public void DestroyExcuter()
         {
-            Instruction.instructionNeedsTwoBytes -= new InstructionNeedsExtraTwoBytes(ExtraTwoBytesGetter);
-            Instruction.instructionFinsihed -= new InstructionExcutionFinished(FinishedTemp);
+            //Instruction.instructionNeedsTwoBytes -= new InstructionNeedsExtraTwoBytes(ExtraTwoBytesGetter);
+            //Instruction.instructionFinsihed -= new InstructionExcutionFinished(FinishedTemp);
            
         }
         private void FinishedTemp(IexcRes r)
         {
             r.id = i;
+            r.inStrMode = strRev;
+            r.inExecMode = realExcu;
             if (instructionFinsihed != null) instructionFinsihed(r);
         }
         private ushort ExtraTwoBytesGetter(Instruction caller)
@@ -73,23 +82,26 @@ namespace SP.InstructionsUnit
             realExcu = false;
             CurrentPC = regs[RegistersIndex.PC].value;
             regs[RegistersIndex.PC].value = mem.getshortAt(0);
-            SendUpdateInterfaceEvent();
+            SendUpdateInterfaceEvent(false,true);
 
         }
         public void OpenExcutionSession(bool withString)
         {
+            IsSessionStarted = true;
             regs.ResetRegisters();
             strRev = withString;
             realExcu = true;
             i = 0;
             CurrentPC = regs[RegistersIndex.PC].value;
             regs[RegistersIndex.PC].value = mem.getshortAt(0);
-            SendUpdateInterfaceEvent();
+            SendUpdateInterfaceEvent(true,withString);
         }
-        private void SendUpdateInterfaceEvent()
+        private void SendUpdateInterfaceEvent(bool _inexecMode = false , bool _inStrMode = false)
         {
             IexcRes r = new IexcRes();
             r.id = -1;
+            r.inExecMode = _inexecMode;
+            r.inStrMode = _inStrMode;
             if (instructionFinsihed != null) instructionFinsihed(r);
         }
 

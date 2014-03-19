@@ -152,7 +152,7 @@ namespace SP.GUI
         private void executeToolStripMenuItem_Click(object sender, EventArgs e)
         {
            // ((RecordsWindow)this.ActiveMdiChild).runCode();
-            ((RecordsWindow)this.ActiveMdiChild).ExcuteCode();
+            ((RecordsWindow)this.ActiveMdiChild).ExcuteAll();
         }
 
         private void undoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -191,6 +191,26 @@ namespace SP.GUI
                     ;
                 }
             }
+        }
+
+        private void reverseTheCodeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ((RecordsWindow)this.ActiveMdiChild).ReverseCode();
+        }
+
+        private void excuteNextToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ((RecordsWindow)this.ActiveMdiChild).ExcuteCode();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            ((RecordsWindow)this.ActiveMdiChild).ExcuteCode();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            ((RecordsWindow)this.ActiveMdiChild).ExcuteAll();
         }
     }
 }

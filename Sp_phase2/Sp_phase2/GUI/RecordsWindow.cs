@@ -28,6 +28,7 @@ namespace SP.GUI
         public Registers  regs = new Registers();
         public FileReader fReader;
 
+        InstructionExcuter exec;
         
         public RecordsWindow()
         {
@@ -35,6 +36,10 @@ namespace SP.GUI
             RecordBox.ShortcutsEnabled = true;
             RecordBox.AllowDrop = true;
             RecordBox.AcceptsTab = true;
+
+
+            //exec = new InstructionExcuter(memUnit, regs);
+            //exec.instructionFinsihed += new InstructionExcutionFinished(FinishedIRexec);
 
         }
 
@@ -98,6 +103,7 @@ namespace SP.GUI
             filters.Add(new duplicateRecorcdType1Filter());
             filters.Add(new MemoryBoundFilter());
             filters.Add(new MissingRecord2Filter());
+            filters.Add(new MissingType1filter());
            
 
             string Line;
@@ -139,8 +145,12 @@ namespace SP.GUI
             
         }
 
-        public void LoadFileToMemory(){
-            memUnit.Reset();
+        public void LoadFileToMemory()
+        {
+            LoadFileToMemory(memUnit);
+        }
+        public void LoadFileToMemory(Memory mem){
+            mem.Reset();
             Reader  fReader= new StringReader(RecordBox.Text);
             ErrorsList.Items.Clear();
             int LineCounter=-1;
@@ -192,9 +202,9 @@ namespace SP.GUI
                 for (int i = 0; i < records.Count; i++)
                 {
                     if (records[i].RecordType != 1)
-                        memUnit.WriteBytesAtAddress(records[i].address, records[i].data);
+                        mem.WriteBytesAtAddress(records[i].address, records[i].data);
                     else
-                        memUnit.setshortAt(0, records[i].address);
+                        mem.setshortAt(0, records[i].address);
                 }
             }
         }
@@ -203,20 +213,102 @@ namespace SP.GUI
         {
             UpdateRegistersInterface();
             if (r.id != -1)
-                MessageBox.Show(r.revStr);
+            //MessageBox.Show(r.revStr);
+            {
+                if (r.inStrMode && !r.inExecMode)
+                    InstrBox.Text += r.revStr + Environment.NewLine;
+                
+                if (r.inExecMode && r.inStrMode)
+                {
+                    InstrBox.SelectionBackColor = Color.White;
+                    int s = InstrBox.GetFirstCharIndexFromLine(r.id + 1);
+                    int e = InstrBox.GetFirstCharIndexFromLine(r.id + 2);
+                    InstrBox.Select(s, e - s);
+                   // InstrBox.SelectedText = r.revStr;
+                    InstrBox.SelectionBackColor = Color.Red;
+                }
+            }
             else
-                MessageBox.Show("Session Started and machine registers initialized");
+            {
+                if (r.inStrMode && r.inExecMode)
+                {
+                    int s = InstrBox.GetFirstCharIndexFromLine(r.id + 1);
+                    int e = InstrBox.GetFirstCharIndexFromLine(r.id + 2);
+                    InstrBox.SelectionBackColor = Color.White;
+                    InstrBox.Select(s, e - s);
+                    InstrBox.SelectionBackColor = Color.Red;
+                }
+
+            }
+            
         }
         public void ExcuteCode()
         {
-            InstructionExcuter exec = new InstructionExcuter(memUnit, regs);
-            exec.instructionFinsihed += new InstructionExcutionFinished(FinishedIRexec);
-            exec.OpenExcutionSession(true);
-            while (exec.ExecuteNextInstruction()) ;
-            exec.DestroyExcuter();
+            if (exec == null)
+            {
+                LoadFileToMemory();
+                ReverseCode();
+                exec = new InstructionExcuter(memUnit, regs);
+                exec.instructionFinsihed += new InstructionExcutionFinished(FinishedIRexec);
+                exec.OpenExcutionSession(true);
+            }
+            else
+                if (!exec.ExecuteNextInstruction())
+                {
+                    exec.IsSessionStarted = false;
+                    exec.DestroyExcuter();
+                    exec = null;
+
+                }
+            //exec.DestroyExcuter();
            // MessageBox.Show("X4: " + regs[RegistersIndex.X4].value.ToString("X4"));
 
         }
+        public void ExcuteAll()
+        {
+            if (exec == null)
+            {
+                LoadFileToMemory();
+                //ReverseCode();
+                exec = new InstructionExcuter(memUnit, regs);
+                exec.instructionFinsihed += new InstructionExcutionFinished(FinishedIRexec);
+                exec.OpenExcutionSession(false);
+            }
+            else
+            {
+                while (exec.ExecuteNextInstruction()) ;
+                
+                    exec.IsSessionStarted = false;
+                    exec.DestroyExcuter();
+                    exec = null;
+            }
+            //exec.DestroyExcuter();
+            // MessageBox.Show("X4: " + regs[RegistersIndex.X4].value.ToString("X4"));
+
+        }
+        public void ReverseCode()
+        {
+            
+            InstrBox.Clear();
+            Memory memTemp = new Memory();
+           // Registers regsTemp = regs;
+
+            //memUnit = new Memory();
+            //regs = new Registers();
+
+            LoadFileToMemory(memTemp); //reset the memory 
+
+            InstructionExcuter exec = new InstructionExcuter( memTemp, new Registers());
+            exec.instructionFinsihed += new InstructionExcutionFinished(FinishedIRexec);
+            exec.OpenReverseEngineeringSession();
+            while (exec.ExecuteNextInstruction()) ;
+
+           // memUnit = memTemp; // restore old mem;
+           // regs = regsTemp;
+            UpdateRegistersInterface();
+            exec.DestroyExcuter();
+        }
+
 
         private void groupBox2_Enter(object sender, EventArgs e)
         {
@@ -241,6 +333,11 @@ namespace SP.GUI
             txtZ.Text = regs[RegistersIndex.CR][Register.Z].ToString();
         }
         private void textBox11_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
         {
 
         }

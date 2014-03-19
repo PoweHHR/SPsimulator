@@ -86,6 +86,10 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.reverseTheCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.excuteNextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -326,7 +330,9 @@
             this.memoryViewToolStripMenuItem,
             this.checkForErrorsToolStripMenuItem,
             this.loadToMemoryToolStripMenuItem,
-            this.executeToolStripMenuItem});
+            this.executeToolStripMenuItem,
+            this.reverseTheCodeToolStripMenuItem,
+            this.excuteNextToolStripMenuItem});
             this.toolsMenu.Name = "toolsMenu";
             this.toolsMenu.Size = new System.Drawing.Size(48, 20);
             this.toolsMenu.Text = "&Tools";
@@ -334,34 +340,34 @@
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.optionsToolStripMenuItem.Text = "&Options";
             // 
             // memoryViewToolStripMenuItem
             // 
             this.memoryViewToolStripMenuItem.Name = "memoryViewToolStripMenuItem";
-            this.memoryViewToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.memoryViewToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.memoryViewToolStripMenuItem.Text = "Memory View";
             this.memoryViewToolStripMenuItem.Click += new System.EventHandler(this.memoryViewToolStripMenuItem_Click);
             // 
             // checkForErrorsToolStripMenuItem
             // 
             this.checkForErrorsToolStripMenuItem.Name = "checkForErrorsToolStripMenuItem";
-            this.checkForErrorsToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.checkForErrorsToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.checkForErrorsToolStripMenuItem.Text = "check for errors";
             this.checkForErrorsToolStripMenuItem.Click += new System.EventHandler(this.checkForErrorsToolStripMenuItem_Click);
             // 
             // loadToMemoryToolStripMenuItem
             // 
             this.loadToMemoryToolStripMenuItem.Name = "loadToMemoryToolStripMenuItem";
-            this.loadToMemoryToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.loadToMemoryToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.loadToMemoryToolStripMenuItem.Text = "Load to memory";
             this.loadToMemoryToolStripMenuItem.Click += new System.EventHandler(this.loadToMemoryToolStripMenuItem_Click);
             // 
             // executeToolStripMenuItem
             // 
             this.executeToolStripMenuItem.Name = "executeToolStripMenuItem";
-            this.executeToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.executeToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.executeToolStripMenuItem.Text = "execute";
             this.executeToolStripMenuItem.Click += new System.EventHandler(this.executeToolStripMenuItem_Click);
             // 
@@ -476,7 +482,9 @@
             this.printToolStripButton,
             this.printPreviewToolStripButton,
             this.toolStripSeparator2,
-            this.helpToolStripButton});
+            this.helpToolStripButton,
+            this.toolStripButton1,
+            this.toolStripButton2});
             this.toolStrip.Location = new System.Drawing.Point(0, 24);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(632, 25);
@@ -565,6 +573,40 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
+            // reverseTheCodeToolStripMenuItem
+            // 
+            this.reverseTheCodeToolStripMenuItem.Name = "reverseTheCodeToolStripMenuItem";
+            this.reverseTheCodeToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.reverseTheCodeToolStripMenuItem.Text = "Reverse the code";
+            this.reverseTheCodeToolStripMenuItem.Click += new System.EventHandler(this.reverseTheCodeToolStripMenuItem_Click);
+            // 
+            // excuteNextToolStripMenuItem
+            // 
+            this.excuteNextToolStripMenuItem.Name = "excuteNextToolStripMenuItem";
+            this.excuteNextToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.excuteNextToolStripMenuItem.Text = "Excute next";
+            this.excuteNextToolStripMenuItem.Click += new System.EventHandler(this.excuteNextToolStripMenuItem_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "step into ";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton2.Text = "Excute the program";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
             // RecordsParent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -646,6 +688,10 @@
         private System.Windows.Forms.ToolStripMenuItem checkForErrorsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadToMemoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem executeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reverseTheCodeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem excuteNextToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
     }
 }
 

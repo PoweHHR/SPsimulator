@@ -14,8 +14,10 @@ namespace SP.InstructionsUnit
         public bool Success = true;
         public bool CanMoveToNextInstruction = true;
         public Instruction caller;
-        public string revStr;
+        public string revStr = null;
         public int id;
+        public bool inStrMode = false;
+        public bool inExecMode = false;
     }
     public enum FuncCatchRes
     {
@@ -61,8 +63,8 @@ namespace SP.InstructionsUnit
         
 
 
-        public static event InstructionExcutionFinished instructionFinsihed;
-        public static event InstructionNeedsExtraTwoBytes instructionNeedsTwoBytes;
+        public  event InstructionExcutionFinished instructionFinsihed;
+        public  event InstructionNeedsExtraTwoBytes instructionNeedsTwoBytes;
         protected ushort GetExtra2Bytes(Instruction caller)
         {
             return instructionNeedsTwoBytes(caller);
