@@ -95,6 +95,7 @@
     <Compile Include="InstructionsUnit\InstructionExcuter.cs" />
     <Compile Include="InstructionsUnit\Instructions\ADD.cs" />
     <Compile Include="InstructionsUnit\Instructions\AND.cs" />
+    <Compile Include="InstructionsUnit\Instructions\DIVU.cs" />
     <Compile Include="InstructionsUnit\Instructions\HLT.cs" />
     <Compile Include="InstructionsUnit\Instructions\LSP.cs" />
     <Compile Include="InstructionsUnit\Instructions\MIN.cs" />
