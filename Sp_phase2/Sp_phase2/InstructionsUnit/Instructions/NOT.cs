@@ -31,7 +31,10 @@ namespace SP.InstructionsUnit.Instructions
                 {
                     ushort bytes = 0;
                     if (instr.addressingMode == Decode.AddressingAbsoulute)
-                        bytes = mem.getshortAt(nBytes = GetExtra2Bytes(this));
+                        if (instr.sizeAndR == Decode.SizeWord)
+                            bytes = mem.getshortAt(nBytes = GetExtra2Bytes(this));
+                        else
+                            bytes = mem[(int)(nBytes = GetExtra2Bytes(this))];
                     else if (instr.addressingMode == Decode.AddressingImmediate)
                         bytes = nBytes = GetExtra2Bytes(this);
                     else
