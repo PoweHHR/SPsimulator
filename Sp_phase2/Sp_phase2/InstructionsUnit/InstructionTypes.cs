@@ -17,6 +17,7 @@ namespace SP.InstructionsUnit
         ADD     = 0x2000,
         SUB     = 0x2800,
         MULS    = 0x3000,
+        MIN     = 0x4000,
         NOT     = 0x5000
     }
 }

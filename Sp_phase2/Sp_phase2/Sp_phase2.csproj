@@ -97,6 +97,7 @@
     <Compile Include="InstructionsUnit\Instructions\AND.cs" />
     <Compile Include="InstructionsUnit\Instructions\HLT.cs" />
     <Compile Include="InstructionsUnit\Instructions\LSP.cs" />
+    <Compile Include="InstructionsUnit\Instructions\MIN.cs" />
     <Compile Include="InstructionsUnit\Instructions\MULS.cs" />
     <Compile Include="InstructionsUnit\Instructions\NOT.cs" />
     <Compile Include="InstructionsUnit\Instructions\STR.cs" />
@@ -118,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
   </ItemGroup>
   <ItemGroup>

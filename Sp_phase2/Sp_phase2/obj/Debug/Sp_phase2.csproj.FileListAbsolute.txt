@@ -15,3 +15,5 @@ C:\Users\Ahmed\Documents\GitHub\SPsimulator\Sp_phase2\Sp_phase2\obj\Debug\SP.GUI
 C:\Users\Ahmed\Documents\GitHub\SPsimulator\Sp_phase2\Sp_phase2\obj\Debug\SP.GUI.RecordsParent.resources
 C:\Users\Ahmed\Documents\GitHub\SPsimulator\Sp_phase2\Sp_phase2\obj\Debug\SP.GUI.RecordsWindow.resources
 C:\Users\Ahmed\Documents\GitHub\SPsimulator\Sp_phase2\Sp_phase2\obj\Debug\Sp_phase2.csproj.GenerateResource.Cache
+C:\Users\Ahmed\Documents\GitHub\SPsimulator\Sp_phase2\Sp_phase2\bin\Debug\Sp_phase2.exe
+C:\Users\Ahmed\Documents\GitHub\SPsimulator\Sp_phase2\Sp_phase2\bin\Debug\Sp_phase2.pdb
