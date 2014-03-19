@@ -31,14 +31,21 @@ namespace SP.InstructionsUnit
             Instruction.AssignUnits(_regs,_mem);
             Instruction.instructionNeedsTwoBytes += new InstructionNeedsExtraTwoBytes(ExtraTwoBytesGetter);
             Instruction.instructionFinsihed += new InstructionExcutionFinished(FinishedTemp);
-            Instructions.Add(new Instructions.OR());
-            Instructions.Add(new Instructions.LD());
-            Instructions.Add(new Instructions.STR());
-            Instructions.Add(new Instructions.AND());
-            Instructions.Add(new Instructions.NOT());
-            Instructions.Add(new Instructions.LSP());
-            Instructions.Add(new Instructions.HLT());
 
+            Instructions.Add(new Instructions.ADD());
+            Instructions.Add(new Instructions.AND());
+            Instructions.Add(new Instructions.DIVU());
+            Instructions.Add(new Instructions.HLT());
+            Instructions.Add(new Instructions.LD());
+            Instructions.Add(new Instructions.LSP());
+            Instructions.Add(new Instructions.MIN());
+            Instructions.Add(new Instructions.MULS());
+            Instructions.Add(new Instructions.NOT());
+            Instructions.Add(new Instructions.OR());
+            Instructions.Add(new Instructions.POP());
+            Instructions.Add(new Instructions.PUSH());
+            Instructions.Add(new Instructions.STR());
+            Instructions.Add(new Instructions.SUB());
 
 
         
@@ -51,6 +58,7 @@ namespace SP.InstructionsUnit
         }
         private void FinishedTemp(IexcRes r)
         {
+            r.id = i;
             if (instructionFinsihed != null) instructionFinsihed(r);
         }
         private ushort ExtraTwoBytesGetter(Instruction caller)
@@ -59,20 +67,30 @@ namespace SP.InstructionsUnit
         }
         public void OpenReverseEngineeringSession()
         {
+            regs.ResetRegisters();
             i = 0;
             strRev = true;
             realExcu = false;
             CurrentPC = regs[RegistersIndex.PC].value;
             regs[RegistersIndex.PC].value = mem.getshortAt(0);
+            SendUpdateInterfaceEvent();
 
         }
         public void OpenExcutionSession(bool withString)
         {
+            regs.ResetRegisters();
             strRev = withString;
             realExcu = true;
             i = 0;
             CurrentPC = regs[RegistersIndex.PC].value;
             regs[RegistersIndex.PC].value = mem.getshortAt(0);
+            SendUpdateInterfaceEvent();
+        }
+        private void SendUpdateInterfaceEvent()
+        {
+            IexcRes r = new IexcRes();
+            r.id = -1;
+            if (instructionFinsihed != null) instructionFinsihed(r);
         }
 
         public bool ExecuteNextInstruction()
@@ -82,7 +100,7 @@ namespace SP.InstructionsUnit
             foreach (Instruction x in Instructions)
             {
                 res = x.ProcessDecodedInstruction(d,strRev,realExcu,true,i);
-                if (res == FuncCatchRes.Catched) return true;
+                if (res == FuncCatchRes.Catched) { i++; return true; }
                 if (res == FuncCatchRes.Halt   ) return false;
             }
 

@@ -202,7 +202,10 @@ namespace SP.GUI
         public void FinishedIRexec(IexcRes r)
         {
             UpdateRegistersInterface();
-            MessageBox.Show(r.revStr);
+            if (r.id != -1)
+                MessageBox.Show(r.revStr);
+            else
+                MessageBox.Show("Session Started and machine registers initialized");
         }
         public void ExcuteCode()
         {
