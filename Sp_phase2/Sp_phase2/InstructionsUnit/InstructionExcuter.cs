@@ -22,6 +22,7 @@ namespace SP.InstructionsUnit
         Memory mem;
         Registers regs;
         ushort CurrentPC;
+        public event InstructionExcutionFinished instructionFinsihed;
         public InstructionExcuter(Memory _mem,Registers _regs)
         {
             mem = _mem;
@@ -31,10 +32,23 @@ namespace SP.InstructionsUnit
             Instruction.instructionNeedsTwoBytes += new InstructionNeedsExtraTwoBytes(ExtraTwoBytesGetter);
             Instruction.instructionFinsihed += new InstructionExcutionFinished(FinishedTemp);
             Instructions.Add(new Instructions.OR());
+            Instructions.Add(new Instructions.LD());
+            Instructions.Add(new Instructions.STR());
+            Instructions.Add(new Instructions.AND());
+            Instructions.Add(new Instructions.NOT());
+            Instructions.Add(new Instructions.LSP());
+            Instructions.Add(new Instructions.HLT());
         
+        }
+        public void DestroyExcuter()
+        {
+            Instruction.instructionNeedsTwoBytes -= new InstructionNeedsExtraTwoBytes(ExtraTwoBytesGetter);
+            Instruction.instructionFinsihed -= new InstructionExcutionFinished(FinishedTemp);
+           
         }
         private void FinishedTemp(IexcRes r)
         {
+            if (instructionFinsihed != null) instructionFinsihed(r);
         }
         private ushort ExtraTwoBytesGetter(Instruction caller)
         {

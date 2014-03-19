@@ -141,12 +141,12 @@ namespace SP.GUI
             records = new List<Record>();
             List<Filter> filters = new List<Filter>();
 
-            filters.Add(new AddressSeqFilter());
-            filters.Add(new ByteCountFilter());
-            filters.Add(new CheckSumFilter());
-            filters.Add(new duplicateRecorcdType1Filter());
-            filters.Add(new MemoryBoundFilter());
-            filters.Add(new MissingRecord2Filter());
+            //filters.Add(new AddressSeqFilter());
+            //filters.Add(new ByteCountFilter());
+            //filters.Add(new CheckSumFilter());
+            //filters.Add(new duplicateRecorcdType1Filter());
+            //filters.Add(new MemoryBoundFilter());
+            //filters.Add(new MissingRecord2Filter());
 
             string Line;
             LineParser parser = new LineParser();
@@ -190,13 +190,46 @@ namespace SP.GUI
             }
         }
 
-
+        public void FinishedIRexec(IexcRes r)
+        {
+            UpdateRegistersInterface();
+            MessageBox.Show(r.revStr);
+        }
         public void ExcuteCode()
         {
             InstructionExcuter exec = new InstructionExcuter(memUnit, regs);
-            exec.OpenExcutionSession(false);
+            exec.instructionFinsihed += new InstructionExcutionFinished(FinishedIRexec);
+            exec.OpenExcutionSession(true);
             while (exec.ExecuteNextInstruction()) ;
-            MessageBox.Show("X4: " + regs[RegistersIndex.X4].value.ToString("X4"));
+            exec.DestroyExcuter();
+           // MessageBox.Show("X4: " + regs[RegistersIndex.X4].value.ToString("X4"));
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+        private void UpdateRegistersInterface()
+        {
+            txtX0.Text = regs[RegistersIndex.X0].value.ToString("X4");
+            txtX1.Text = regs[RegistersIndex.X1].value.ToString("X4");
+            txtX2.Text = regs[RegistersIndex.X2].value.ToString("X4");
+            txtX3.Text = regs[RegistersIndex.X3].value.ToString("X4");
+            txtX4.Text = regs[RegistersIndex.X4].value.ToString("X4");
+            txtX5.Text = regs[RegistersIndex.X5].value.ToString("X4");
+            txtX6.Text = regs[RegistersIndex.X6].value.ToString("X4");
+            txtX7.Text = regs[RegistersIndex.X7].value.ToString("X4");
+            txtPC.Text = regs[RegistersIndex.PC].value.ToString("X4");
+            txtSP.Text = regs[RegistersIndex.SP].value.ToString("X4");
+           // if (   )
+            txtC.Text = regs[RegistersIndex.CR][Register.C].ToString();
+            txtN.Text = regs[RegistersIndex.CR][Register.N].ToString();
+            txtV.Text = regs[RegistersIndex.CR][Register.V].ToString();
+            txtZ.Text = regs[RegistersIndex.CR][Register.Z].ToString();
+        }
+        private void textBox11_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

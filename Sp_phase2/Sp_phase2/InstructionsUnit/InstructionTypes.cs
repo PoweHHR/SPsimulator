@@ -12,8 +12,8 @@ namespace SP.InstructionsUnit
         STR     = 0x0800,
         AND     = 0x4800,
         OR      = 0x5800,
-        HLT     = 0xE000
-
-
+        HLT     = 0xE000,
+        LSP     = 0x1000,
+        NOT     = 0x5000
     }
 }

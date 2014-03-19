@@ -18,7 +18,13 @@ namespace SP.RegistersUnit
                 regs[i] = new Register();
             }
         }
-
+        public void ResetRegisters()
+        {
+            for (int i = 0; i < regs.Length; i++)
+            {
+                regs[i].value = 0;
+            }
+        }
         public Register this[RegistersIndex idx]
         {
             get

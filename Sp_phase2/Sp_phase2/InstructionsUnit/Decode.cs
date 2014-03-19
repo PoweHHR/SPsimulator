@@ -36,6 +36,15 @@ namespace SP.InstructionsUnit
             return d;
 
         }
+        public bool NeedsExtra2Bytes()
+        {
+            if (addressingMode == Decode.AddressingAbsoulute ||
+                addressingMode == Decode.AddressingImmediate ||
+                addressingMode == Decode.AddressingIndirectWithDisplacement
+                ) return true;
+            else
+                return false;
+        }
 
     }
 }

@@ -30,41 +30,41 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txtX7 = new System.Windows.Forms.TextBox();
+            this.txtX6 = new System.Windows.Forms.TextBox();
+            this.txtX5 = new System.Windows.Forms.TextBox();
+            this.txtX4 = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtX3 = new System.Windows.Forms.TextBox();
+            this.txtX2 = new System.Windows.Forms.TextBox();
+            this.txtX1 = new System.Windows.Forms.TextBox();
+            this.txtX0 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.textBox27 = new System.Windows.Forms.TextBox();
-            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.txtN = new System.Windows.Forms.TextBox();
+            this.txtC = new System.Windows.Forms.TextBox();
+            this.txtV = new System.Windows.Forms.TextBox();
+            this.txtZ = new System.Windows.Forms.TextBox();
             this.textBox29 = new System.Windows.Forms.TextBox();
             this.textBox30 = new System.Windows.Forms.TextBox();
             this.textBox31 = new System.Windows.Forms.TextBox();
-            this.textBox32 = new System.Windows.Forms.TextBox();
+            this.tcttc = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox35 = new System.Windows.Forms.TextBox();
+            this.txtSP = new System.Windows.Forms.TextBox();
             this.txtPC = new System.Windows.Forms.TextBox();
             this.textBox39 = new System.Windows.Forms.TextBox();
             this.textBox40 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.RecordContainer = new System.Windows.Forms.TextBox();
             this.RecordBox = new System.Windows.Forms.RichTextBox();
+            this.RecordContainer = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.ErrorsList = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
@@ -91,19 +91,19 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox9);
-            this.groupBox2.Controls.Add(this.textBox10);
-            this.groupBox2.Controls.Add(this.textBox11);
-            this.groupBox2.Controls.Add(this.textBox12);
+            this.groupBox2.Controls.Add(this.txtX7);
+            this.groupBox2.Controls.Add(this.txtX6);
+            this.groupBox2.Controls.Add(this.txtX5);
+            this.groupBox2.Controls.Add(this.txtX4);
             this.groupBox2.Controls.Add(this.textBox13);
             this.groupBox2.Controls.Add(this.textBox14);
             this.groupBox2.Controls.Add(this.textBox15);
             this.groupBox2.Controls.Add(this.textBox16);
             this.groupBox2.Controls.Add(this.groupBox3);
-            this.groupBox2.Controls.Add(this.textBox8);
-            this.groupBox2.Controls.Add(this.textBox7);
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.txtX3);
+            this.groupBox2.Controls.Add(this.txtX2);
+            this.groupBox2.Controls.Add(this.txtX1);
+            this.groupBox2.Controls.Add(this.txtX0);
             this.groupBox2.Controls.Add(this.textBox4);
             this.groupBox2.Controls.Add(this.textBox3);
             this.groupBox2.Controls.Add(this.textBox2);
@@ -114,54 +114,56 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Data Registers";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // textBox9
+            // txtX7
             // 
-            this.textBox9.BackColor = System.Drawing.Color.Tan;
-            this.textBox9.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(141, 103);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(54, 22);
-            this.textBox9.TabIndex = 16;
-            this.textBox9.Text = "0000";
-            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtX7.BackColor = System.Drawing.Color.Tan;
+            this.txtX7.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtX7.Location = new System.Drawing.Point(141, 103);
+            this.txtX7.Name = "txtX7";
+            this.txtX7.ReadOnly = true;
+            this.txtX7.Size = new System.Drawing.Size(54, 22);
+            this.txtX7.TabIndex = 16;
+            this.txtX7.Text = "0000";
+            this.txtX7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox10
+            // txtX6
             // 
-            this.textBox10.BackColor = System.Drawing.Color.Tan;
-            this.textBox10.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(141, 75);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(54, 22);
-            this.textBox10.TabIndex = 15;
-            this.textBox10.Text = "0000";
-            this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtX6.BackColor = System.Drawing.Color.Tan;
+            this.txtX6.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtX6.Location = new System.Drawing.Point(141, 75);
+            this.txtX6.Name = "txtX6";
+            this.txtX6.ReadOnly = true;
+            this.txtX6.Size = new System.Drawing.Size(54, 22);
+            this.txtX6.TabIndex = 15;
+            this.txtX6.Text = "0000";
+            this.txtX6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox11
+            // txtX5
             // 
-            this.textBox11.BackColor = System.Drawing.Color.Tan;
-            this.textBox11.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(141, 47);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.ReadOnly = true;
-            this.textBox11.Size = new System.Drawing.Size(54, 22);
-            this.textBox11.TabIndex = 14;
-            this.textBox11.Text = "0000";
-            this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtX5.BackColor = System.Drawing.Color.Tan;
+            this.txtX5.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtX5.Location = new System.Drawing.Point(141, 47);
+            this.txtX5.Name = "txtX5";
+            this.txtX5.ReadOnly = true;
+            this.txtX5.Size = new System.Drawing.Size(54, 22);
+            this.txtX5.TabIndex = 14;
+            this.txtX5.Text = "0000";
+            this.txtX5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtX5.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
-            // textBox12
+            // txtX4
             // 
-            this.textBox12.BackColor = System.Drawing.Color.Tan;
-            this.textBox12.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(141, 19);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.ReadOnly = true;
-            this.textBox12.Size = new System.Drawing.Size(54, 22);
-            this.textBox12.TabIndex = 13;
-            this.textBox12.Text = "0000";
-            this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtX4.BackColor = System.Drawing.Color.Tan;
+            this.txtX4.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtX4.Location = new System.Drawing.Point(141, 19);
+            this.txtX4.Name = "txtX4";
+            this.txtX4.ReadOnly = true;
+            this.txtX4.Size = new System.Drawing.Size(54, 22);
+            this.txtX4.TabIndex = 13;
+            this.txtX4.Text = "0000";
+            this.txtX4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox13
             // 
@@ -219,54 +221,54 @@
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             // 
-            // textBox8
+            // txtX3
             // 
-            this.textBox8.BackColor = System.Drawing.Color.Tan;
-            this.textBox8.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(33, 103);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(54, 22);
-            this.textBox8.TabIndex = 7;
-            this.textBox8.Text = "0000";
-            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtX3.BackColor = System.Drawing.Color.Tan;
+            this.txtX3.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtX3.Location = new System.Drawing.Point(33, 103);
+            this.txtX3.Name = "txtX3";
+            this.txtX3.ReadOnly = true;
+            this.txtX3.Size = new System.Drawing.Size(54, 22);
+            this.txtX3.TabIndex = 7;
+            this.txtX3.Text = "0000";
+            this.txtX3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox7
+            // txtX2
             // 
-            this.textBox7.BackColor = System.Drawing.Color.Tan;
-            this.textBox7.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(33, 75);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(54, 22);
-            this.textBox7.TabIndex = 6;
-            this.textBox7.Text = "0000";
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtX2.BackColor = System.Drawing.Color.Tan;
+            this.txtX2.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtX2.Location = new System.Drawing.Point(33, 75);
+            this.txtX2.Name = "txtX2";
+            this.txtX2.ReadOnly = true;
+            this.txtX2.Size = new System.Drawing.Size(54, 22);
+            this.txtX2.TabIndex = 6;
+            this.txtX2.Text = "0000";
+            this.txtX2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox6
+            // txtX1
             // 
-            this.textBox6.BackColor = System.Drawing.Color.Tan;
-            this.textBox6.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(33, 47);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(54, 22);
-            this.textBox6.TabIndex = 5;
-            this.textBox6.Text = "0000";
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtX1.BackColor = System.Drawing.Color.Tan;
+            this.txtX1.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtX1.Location = new System.Drawing.Point(33, 47);
+            this.txtX1.Name = "txtX1";
+            this.txtX1.ReadOnly = true;
+            this.txtX1.Size = new System.Drawing.Size(54, 22);
+            this.txtX1.TabIndex = 5;
+            this.txtX1.Text = "0000";
+            this.txtX1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox5
+            // txtX0
             // 
-            this.textBox5.BackColor = System.Drawing.Color.Tan;
-            this.textBox5.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(33, 19);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(54, 22);
-            this.textBox5.TabIndex = 4;
-            this.textBox5.Text = "0000";
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.txtX0.BackColor = System.Drawing.Color.Tan;
+            this.txtX0.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtX0.Location = new System.Drawing.Point(33, 19);
+            this.txtX0.Name = "txtX0";
+            this.txtX0.ReadOnly = true;
+            this.txtX0.Size = new System.Drawing.Size(54, 22);
+            this.txtX0.TabIndex = 4;
+            this.txtX0.Text = "0000";
+            this.txtX0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtX0.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // textBox4
             // 
@@ -318,14 +320,14 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox25);
-            this.groupBox4.Controls.Add(this.textBox26);
-            this.groupBox4.Controls.Add(this.textBox27);
-            this.groupBox4.Controls.Add(this.textBox28);
+            this.groupBox4.Controls.Add(this.txtN);
+            this.groupBox4.Controls.Add(this.txtC);
+            this.groupBox4.Controls.Add(this.txtV);
+            this.groupBox4.Controls.Add(this.txtZ);
             this.groupBox4.Controls.Add(this.textBox29);
             this.groupBox4.Controls.Add(this.textBox30);
             this.groupBox4.Controls.Add(this.textBox31);
-            this.groupBox4.Controls.Add(this.textBox32);
+            this.groupBox4.Controls.Add(this.tcttc);
             this.groupBox4.Location = new System.Drawing.Point(217, 20);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(116, 137);
@@ -333,53 +335,53 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "CCR Register";
             // 
-            // textBox25
+            // txtN
             // 
-            this.textBox25.BackColor = System.Drawing.Color.Tan;
-            this.textBox25.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox25.Location = new System.Drawing.Point(33, 47);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.ReadOnly = true;
-            this.textBox25.Size = new System.Drawing.Size(21, 22);
-            this.textBox25.TabIndex = 7;
-            this.textBox25.Text = "0";
-            this.textBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtN.BackColor = System.Drawing.Color.Tan;
+            this.txtN.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtN.Location = new System.Drawing.Point(33, 47);
+            this.txtN.Name = "txtN";
+            this.txtN.ReadOnly = true;
+            this.txtN.Size = new System.Drawing.Size(21, 22);
+            this.txtN.TabIndex = 7;
+            this.txtN.Text = "0";
+            this.txtN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox26
+            // txtC
             // 
-            this.textBox26.BackColor = System.Drawing.Color.Tan;
-            this.textBox26.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox26.Location = new System.Drawing.Point(6, 47);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.ReadOnly = true;
-            this.textBox26.Size = new System.Drawing.Size(21, 22);
-            this.textBox26.TabIndex = 6;
-            this.textBox26.Text = "0";
-            this.textBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtC.BackColor = System.Drawing.Color.Tan;
+            this.txtC.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtC.Location = new System.Drawing.Point(6, 47);
+            this.txtC.Name = "txtC";
+            this.txtC.ReadOnly = true;
+            this.txtC.Size = new System.Drawing.Size(21, 22);
+            this.txtC.TabIndex = 6;
+            this.txtC.Text = "0";
+            this.txtC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox27
+            // txtV
             // 
-            this.textBox27.BackColor = System.Drawing.Color.Tan;
-            this.textBox27.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox27.Location = new System.Drawing.Point(60, 47);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.ReadOnly = true;
-            this.textBox27.Size = new System.Drawing.Size(21, 22);
-            this.textBox27.TabIndex = 5;
-            this.textBox27.Text = "0";
-            this.textBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtV.BackColor = System.Drawing.Color.Tan;
+            this.txtV.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtV.Location = new System.Drawing.Point(60, 47);
+            this.txtV.Name = "txtV";
+            this.txtV.ReadOnly = true;
+            this.txtV.Size = new System.Drawing.Size(21, 22);
+            this.txtV.TabIndex = 5;
+            this.txtV.Text = "0";
+            this.txtV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox28
+            // txtZ
             // 
-            this.textBox28.BackColor = System.Drawing.Color.Tan;
-            this.textBox28.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox28.Location = new System.Drawing.Point(87, 47);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.ReadOnly = true;
-            this.textBox28.Size = new System.Drawing.Size(21, 22);
-            this.textBox28.TabIndex = 4;
-            this.textBox28.Text = "0";
-            this.textBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtZ.BackColor = System.Drawing.Color.Tan;
+            this.txtZ.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtZ.Location = new System.Drawing.Point(87, 47);
+            this.txtZ.Name = "txtZ";
+            this.txtZ.ReadOnly = true;
+            this.txtZ.Size = new System.Drawing.Size(21, 22);
+            this.txtZ.TabIndex = 4;
+            this.txtZ.Text = "0";
+            this.txtZ.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox29
             // 
@@ -417,21 +419,21 @@
             this.textBox31.Text = "N";
             this.textBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox32
+            // tcttc
             // 
-            this.textBox32.BackColor = System.Drawing.Color.NavajoWhite;
-            this.textBox32.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox32.Location = new System.Drawing.Point(6, 19);
-            this.textBox32.Name = "textBox32";
-            this.textBox32.ReadOnly = true;
-            this.textBox32.Size = new System.Drawing.Size(21, 22);
-            this.textBox32.TabIndex = 0;
-            this.textBox32.Text = "C";
-            this.textBox32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tcttc.BackColor = System.Drawing.Color.NavajoWhite;
+            this.tcttc.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tcttc.Location = new System.Drawing.Point(6, 19);
+            this.tcttc.Name = "tcttc";
+            this.tcttc.ReadOnly = true;
+            this.tcttc.Size = new System.Drawing.Size(21, 22);
+            this.tcttc.TabIndex = 0;
+            this.tcttc.Text = "C";
+            this.tcttc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.textBox35);
+            this.groupBox5.Controls.Add(this.txtSP);
             this.groupBox5.Controls.Add(this.txtPC);
             this.groupBox5.Controls.Add(this.textBox39);
             this.groupBox5.Controls.Add(this.textBox40);
@@ -442,17 +444,17 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Address Registers";
             // 
-            // textBox35
+            // txtSP
             // 
-            this.textBox35.BackColor = System.Drawing.Color.Tan;
-            this.textBox35.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox35.Location = new System.Drawing.Point(33, 47);
-            this.textBox35.Name = "textBox35";
-            this.textBox35.ReadOnly = true;
-            this.textBox35.Size = new System.Drawing.Size(54, 22);
-            this.textBox35.TabIndex = 5;
-            this.textBox35.Text = "0000";
-            this.textBox35.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSP.BackColor = System.Drawing.Color.Tan;
+            this.txtSP.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSP.Location = new System.Drawing.Point(33, 47);
+            this.txtSP.Name = "txtSP";
+            this.txtSP.ReadOnly = true;
+            this.txtSP.Size = new System.Drawing.Size(54, 22);
+            this.txtSP.TabIndex = 5;
+            this.txtSP.Text = "0000";
+            this.txtSP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtPC
             // 
@@ -516,17 +518,6 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Records";
             // 
-            // RecordContainer
-            // 
-            this.RecordContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.RecordContainer.Location = new System.Drawing.Point(7, 20);
-            this.RecordContainer.Multiline = true;
-            this.RecordContainer.Name = "RecordContainer";
-            this.RecordContainer.Size = new System.Drawing.Size(686, 120);
-            this.RecordContainer.TabIndex = 1;
-            // 
             // RecordBox
             // 
             this.RecordBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -539,6 +530,17 @@
             this.RecordBox.Size = new System.Drawing.Size(684, 118);
             this.RecordBox.TabIndex = 2;
             this.RecordBox.Text = "";
+            // 
+            // RecordContainer
+            // 
+            this.RecordContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.RecordContainer.Location = new System.Drawing.Point(7, 20);
+            this.RecordContainer.Multiline = true;
+            this.RecordContainer.Name = "RecordContainer";
+            this.RecordContainer.Size = new System.Drawing.Size(686, 120);
+            this.RecordContainer.TabIndex = 1;
             // 
             // groupBox7
             // 
@@ -595,37 +597,37 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtX0;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.TextBox textBox35;
+        private System.Windows.Forms.TextBox txtSP;
         private System.Windows.Forms.TextBox txtPC;
         private System.Windows.Forms.TextBox textBox39;
         private System.Windows.Forms.TextBox textBox40;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox textBox25;
-        private System.Windows.Forms.TextBox textBox26;
-        private System.Windows.Forms.TextBox textBox27;
-        private System.Windows.Forms.TextBox textBox28;
+        private System.Windows.Forms.TextBox txtN;
+        private System.Windows.Forms.TextBox txtC;
+        private System.Windows.Forms.TextBox txtV;
+        private System.Windows.Forms.TextBox txtZ;
         private System.Windows.Forms.TextBox textBox29;
         private System.Windows.Forms.TextBox textBox30;
         private System.Windows.Forms.TextBox textBox31;
-        private System.Windows.Forms.TextBox textBox32;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox tcttc;
+        private System.Windows.Forms.TextBox txtX7;
+        private System.Windows.Forms.TextBox txtX6;
+        private System.Windows.Forms.TextBox txtX5;
+        private System.Windows.Forms.TextBox txtX4;
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtX3;
+        private System.Windows.Forms.TextBox txtX2;
+        private System.Windows.Forms.TextBox txtX1;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.ListBox ErrorsList;

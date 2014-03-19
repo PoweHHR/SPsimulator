@@ -48,7 +48,17 @@ namespace SP.Helpers
         {
             return (data &  ~(1 << bitIndex));
         }
-
+        public static ushort Extend12bit(ushort d12)
+        {
+            if ((d12 & 0x0800) == 0x0800)
+            {
+                return (ushort)(d12 | 0xF000);
+            }
+            else
+            {
+                return (ushort)(d12 & 0x0FFF);
+            }
+        }
 
     }
 

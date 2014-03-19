@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using SP.Records;
 namespace SP.Filters
 {
-    class MissingRecord2Filter :Filter
+    public class MissingRecord2Filter :Filter
     {
         int counter = 0;
         public string Reason;

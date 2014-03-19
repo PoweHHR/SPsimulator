@@ -64,8 +64,8 @@ namespace SP.RegistersUnit
                     data =data & ~(1 << bitIndex);
             }
             get{
-
-                return (ushort)(data & (1 << bitIndex));
+                if ( (ushort)(data & (1 << bitIndex))  !=0  ) return 1;
+                return 0;
             }
 
         }

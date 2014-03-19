@@ -28,8 +28,8 @@ namespace SP.InstructionsUnit
     public delegate ushort InstructionNeedsExtraTwoBytes(Instruction caller);
     public abstract class  Instruction
     {
-        private string FuncStr;
-        private ushort funcOpcode;
+        protected string FuncStr;
+        protected ushort funcOpcode;
 
         //tools for the programmer of the instruction
         private static Registers regs;

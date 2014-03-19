@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SP.RegistersUnit;
+using SP.Helpers;
 
 namespace SP.InstructionsUnit.Instructions
 {
-    class OR :Instruction
+    class LD :Instruction
     {
-        public OR():base("OR",InstructionTypes.OR){}
+        public LD():base("LD",InstructionTypes.LD){}
 
         protected override IexcRes ProcessTheInstruction(Decode instr, bool strRev, bool realExcute, bool CallInSerial, int id, MemoryUnit.Memory mem, Registers regs)
         {
@@ -27,21 +28,24 @@ namespace SP.InstructionsUnit.Instructions
             if (realExcute)
             if (instr.addressingMode == Decode.AddressingAbsoulute ||
                 instr.addressingMode == Decode.AddressingImmediate ||
-                instr.addressingMode == Decode.AddressingRegister)
+                instr.addressingMode == Decode.AddressingRegister  ||
+                instr.addressingMode == Decode.AddressingIndirectWithDisplacement)
             {
                 ushort bytes=0;
                 if (instr.addressingMode == Decode.AddressingAbsoulute)
                     bytes = mem.getshortAt(nBytes = GetExtra2Bytes(this));
                 else if (instr.addressingMode == Decode.AddressingImmediate)
                     bytes = nBytes = GetExtra2Bytes(this);
-                else
-                    bytes = regs[instr.rs].value;
+                else if (instr.addressingMode == Decode.AddressingIndirectWithDisplacement)
+                    bytes = mem.getshortAt((ushort)(regs[instr.rs].value + (short)Helper.Extend12bit ( nBytes = GetExtra2Bytes(this))));
+                else if (instr.addressingMode == Decode.AddressingRegister)
+                    bytes = bytes = regs[instr.rs].value;
 
                 if (instr.sizeAndR == Decode.SizeWord)
                 {
-                    regs[instr.rd].value = (ushort)(regs[instr.rd].value | bytes);
-                    bytes = regs[instr.rd].value;
-                    if ((bytes & 0x8000) == Register.shortSignBit)
+                    regs[instr.rd].value = bytes;
+                    //bytes = regs[instr.rd].value;
+                    if ((bytes & 0x8000) == 0x8000)
                         regs[RegistersIndex.CR][Register.N] = 1;
                     else
                         regs[RegistersIndex.CR][Register.N] = 0;
@@ -51,8 +55,7 @@ namespace SP.InstructionsUnit.Instructions
                         regs[RegistersIndex.CR][Register.Z] = 0;
                 }
                 else{
-                    regs[instr.rd].lowByte = (byte)(regs[instr.rd].lowByte | (byte)bytes);
-                    bytes = regs[instr.rd].lowByte;
+                    regs[instr.rd].lowByte = ((byte)bytes);
                     if ((bytes & 0x0080) == 0x0080)
                         regs[RegistersIndex.CR][Register.N] = 1;
                     else
@@ -75,6 +78,11 @@ namespace SP.InstructionsUnit.Instructions
                 if (instr.addressingMode == Decode.AddressingAbsoulute)
                 {
                     res.revStr += "$" + nBytes.ToString("X");
+                }
+                if (instr.addressingMode == Decode.AddressingIndirectWithDisplacement)
+                {   if (nBytes !=0)
+                        res.revStr += "$" + nBytes.ToString("X");
+                res.revStr += "[" + instr.rs.ToString() + "]";
                 }
 
             }
