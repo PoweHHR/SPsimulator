@@ -88,6 +88,9 @@
     <Compile Include="GUI\RecordsWindow.Designer.cs">
       <DependentUpon>RecordsWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Extends\RecordsWindowManagment.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Helper\Helper.cs" />
     <Compile Include="InstructionsUnit\Decode.cs" />
     <Compile Include="InstructionsUnit\Fetch.cs" />

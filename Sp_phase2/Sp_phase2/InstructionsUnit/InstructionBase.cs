@@ -18,6 +18,8 @@ namespace SP.InstructionsUnit
         public int id;
         public bool inStrMode = false;
         public bool inExecMode = false;
+        public int InstrLocation=0;
+        public int NextExecutionAddress = 0;
     }
     public enum FuncCatchRes
     {
@@ -52,10 +54,13 @@ namespace SP.InstructionsUnit
         public FuncCatchRes ProcessDecodedInstruction(Decode instr, bool strRev, bool realExcute, bool CallInSerial, int id)
         {
             if (instr.opcode != funcOpcode) return FuncCatchRes.notCached;
+            int PCbeforeExecute = regs[RegistersIndex.PC].value - 2;
+            IexcRes r = ProcessTheInstruction(instr, strRev, realExcute, CallInSerial, id, memUnit, regs);
+            
+            r.InstrLocation = PCbeforeExecute;
+            r.NextExecutionAddress = regs[RegistersIndex.PC].value;
 
-            instructionFinsihed(
-                ProcessTheInstruction(instr, strRev, realExcute, CallInSerial, id,memUnit,regs)
-            );
+            instructionFinsihed(r);
             if (instr.opcode == (ushort)InstructionTypes.HLT) return FuncCatchRes.Halt;
             return FuncCatchRes.Catched ;
         }

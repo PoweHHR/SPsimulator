@@ -66,12 +66,11 @@
             this.RecordBox = new System.Windows.Forms.RichTextBox();
             this.RecordContainer = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.ErrorsList = new System.Windows.Forms.ListBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.InstrBox = new System.Windows.Forms.RichTextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.InstructionsList = new System.Windows.Forms.ListBox();
+            this.ErrorsList = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -564,59 +563,23 @@
             this.groupBox7.Controls.Add(this.ErrorsList);
             this.groupBox7.Location = new System.Drawing.Point(3, -1);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(693, 129);
+            this.groupBox7.Size = new System.Drawing.Size(693, 132);
             this.groupBox7.TabIndex = 2;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Errors List";
-            // 
-            // ErrorsList
-            // 
-            this.ErrorsList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ErrorsList.FormattingEnabled = true;
-            this.ErrorsList.Location = new System.Drawing.Point(7, 20);
-            this.ErrorsList.Name = "ErrorsList";
-            this.ErrorsList.Size = new System.Drawing.Size(680, 95);
-            this.ErrorsList.TabIndex = 0;
             // 
             // groupBox8
             // 
             this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox8.Controls.Add(this.InstrBox);
-            this.groupBox8.Controls.Add(this.textBox5);
+            this.groupBox8.Controls.Add(this.InstructionsList);
             this.groupBox8.Location = new System.Drawing.Point(3, 3);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(161, 101);
+            this.groupBox8.Size = new System.Drawing.Size(164, 101);
             this.groupBox8.TabIndex = 3;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Instructions";
-            // 
-            // InstrBox
-            // 
-            this.InstrBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.InstrBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.InstrBox.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InstrBox.Location = new System.Drawing.Point(8, 21);
-            this.InstrBox.Name = "InstrBox";
-            this.InstrBox.Size = new System.Drawing.Size(146, 73);
-            this.InstrBox.TabIndex = 2;
-            this.InstrBox.Text = "";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Location = new System.Drawing.Point(7, 20);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(148, 75);
-            this.textBox5.TabIndex = 1;
             // 
             // splitContainer1
             // 
@@ -659,6 +622,32 @@
             this.splitContainer2.SplitterWidth = 1;
             this.splitContainer2.TabIndex = 0;
             // 
+            // InstructionsList
+            // 
+            this.InstructionsList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.InstructionsList.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InstructionsList.FormattingEnabled = true;
+            this.InstructionsList.IntegralHeight = false;
+            this.InstructionsList.ItemHeight = 16;
+            this.InstructionsList.Location = new System.Drawing.Point(7, 20);
+            this.InstructionsList.Name = "InstructionsList";
+            this.InstructionsList.Size = new System.Drawing.Size(149, 75);
+            this.InstructionsList.TabIndex = 0;
+            // 
+            // ErrorsList
+            // 
+            this.ErrorsList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ErrorsList.FormattingEnabled = true;
+            this.ErrorsList.IntegralHeight = false;
+            this.ErrorsList.Location = new System.Drawing.Point(8, 19);
+            this.ErrorsList.Name = "ErrorsList";
+            this.ErrorsList.Size = new System.Drawing.Size(679, 110);
+            this.ErrorsList.TabIndex = 0;
+            // 
             // RecordsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -682,7 +671,6 @@
             this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -733,14 +721,13 @@
         private System.Windows.Forms.TextBox txtX1;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.ListBox ErrorsList;
         private System.Windows.Forms.RichTextBox RecordBox;
         private System.Windows.Forms.TextBox RecordContainer;
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.RichTextBox InstrBox;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.ListBox ErrorsList;
+        private System.Windows.Forms.ListBox InstructionsList;
 
 
 

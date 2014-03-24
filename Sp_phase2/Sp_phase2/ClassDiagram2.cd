@@ -1,194 +1,374 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="SP.Exceptions.ParseException" Collapsed="true">
-    <Position X="4" Y="3.5" Width="1.5" />
+    <Position X="4" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Exceptions\Exceptions.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SP.Exceptions.IlligalRecordTypeException" Collapsed="true">
-    <Position X="0.75" Y="5" Width="1.5" />
+    <Position X="0.75" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Exceptions\Exceptions.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SP.Exceptions.RecordFormatException" Collapsed="true">
-    <Position X="3" Y="5" Width="1.5" />
+    <Position X="3" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Exceptions\Exceptions.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SP.Exceptions.EmptyRecordLineException" Collapsed="true">
-    <Position X="5.25" Y="5" Width="1.5" />
+    <Position X="5.25" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Exceptions\Exceptions.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SP.Exceptions.MissingRecordParameters" Collapsed="true">
-    <Position X="7.5" Y="5" Width="1.5" />
+    <Position X="7.5" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Exceptions\Exceptions.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SP.Filters.Filter" Collapsed="true">
-    <Position X="6.5" Y="0.5" Width="1.5" />
+    <Position X="7.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAgCAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Filters\Filter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SP.Filters.AddressSeqFilter" Collapsed="true">
-    <Position X="3.25" Y="1.75" Width="1.5" />
+    <Position X="12.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAIAAAgCAACAAAAAAAEAAAAAAAgAAAA=</HashCode>
       <FileName>Filters\Filters\AddressSeqFilter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SP.Filters.ByteCountFilter" Collapsed="true">
-    <Position X="5.5" Y="1.75" Width="1.5" />
+    <Position X="1" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAIAAAgCAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Filters\Filters\ByteCountFilter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SP.Filters.CheckSumFilter" Collapsed="true">
-    <Position X="7.75" Y="1.75" Width="1.5" />
+    <Position X="3.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAIAAAgCAACAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAIAAAgCAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Filters\Filters\CheckSumFilter.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SP.Filters.MissingType1filter" Collapsed="true">
-    <Position X="10" Y="1.75" Width="1.5" />
+  <Class Name="SP.Filters.duplicateRecorcdType1Filter" Collapsed="true">
+    <Position X="5.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAIAAAgCAACAAAAAAAEAAAAAAAAAAAA=</HashCode>
-      <FileName>Filters\Filters\MissingType1Filter.cs</FileName>
-      <NewMemberFileName>Filters\Filters\duplicateRecorcdType1Filter.cs</NewMemberFileName>
+      <FileName>Filters\Filters\duplicateRecorcdType1Filter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SP.Filters.MemoryBoundFilter" Collapsed="true">
-    <Position X="12.25" Y="1.75" Width="1.5" />
+    <Position X="7.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAIAAAgCAACAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAIAAAgCAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Filters\Filters\MemoryBoundFilter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SP.Filters.MissingRecord2Filter" Collapsed="true">
-    <Position X="1" Y="1.75" Width="1.5" />
+    <Position X="10" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAIAAAgCAACAAAAAAAEAAAAAAAAAAAA=</HashCode>
       <FileName>Filters\Filters\MissingRecord2Filter.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SP.GUI.MemoryView" Collapsed="true">
-    <Position X="20" Y="0.5" Width="1.5" />
+  <Class Name="SP.Filters.MissingType1filter" Collapsed="true">
+    <Position X="12.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACABAAACAAABAAAACCAAACAAAIgAAAEGAQCAACAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAIAAAgCAACAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Filters\Filters\MissingType1Filter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.GUI.MemoryView" Collapsed="true">
+    <Position X="41.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACABAAACAAABAAAACCAAACAAAIgAAAEGAQCAACAAI=</HashCode>
       <FileName>GUI\MemoryView.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SP.GUI.RecordsParent" Collapsed="true">
-    <Position X="18.25" Y="1.5" Width="1.5" />
+    <Position X="39.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BJCgCv0AhCEAEAEICiC2wMdSjABBAswBCkwARzAAQGc=</HashCode>
+      <HashCode>BJCgGv0ChCEAEAEIKiG2wM/SjABhA8wBCswARzAAQGc=</HashCode>
       <FileName>GUI\RecordsParent.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SP.GUI.RecordsWindow" Collapsed="true">
-    <Position X="20" Y="1.5" Width="1.5" />
+    <Position X="41.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QCCCAAEAASAAAACAEICCEABCMAAEICgAEiAAASAIAoA=</HashCode>
+      <HashCode>ACCCQCEAASEAAIwAAIDCECBCMiAkISgAEyAQUTiIQwA=</HashCode>
       <FileName>GUI\RecordsWindow.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SP.Helpers.Helper" Collapsed="true">
-    <Position X="14.75" Y="0.5" Width="1.5" />
+    <Position X="39.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAgAAAAAAQAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAACAAAAAQAAAAAAAAAAEgAAAAAAQAAA=</HashCode>
       <FileName>Helper\Helper.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="SP.InstructionsUnit.Decode">
+    <Position X="28.75" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQABABAAAAMAAAAAAAAgBAAAIAAAIAIAQABBAAAABA=</HashCode>
+      <FileName>InstructionsUnit\Decode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.InstructionsUnit.Fetch">
+    <Position X="28.75" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>EIACAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>InstructionsUnit\Fetch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.InstructionsUnit.IexcRes">
+    <Position X="32.25" Y="0.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAQAAAAEAAAAAAAAAAAAAAgAAAAAAAgAEAAAAAgA=</HashCode>
+      <FileName>InstructionsUnit\InstructionBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.InstructionsUnit.Instruction">
+    <Position X="23.25" Y="1.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAQIAEAAAAAAAAEAAAAAAAAAAAAAIAAAABAoA=</HashCode>
+      <FileName>InstructionsUnit\InstructionBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.InstructionsUnit.InstructionExcuter" Collapsed="true">
+    <Position X="28.75" Y="3" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AACAACAADAAAAAABAAAAFQQAAAQIAAAAIAIAAYABAAA=</HashCode>
+      <FileName>InstructionsUnit\InstructionExcuter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.InstructionsUnit.Instructions.ADD" Collapsed="true">
+    <Position X="16.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InstructionsUnit\Instructions\ADD.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.InstructionsUnit.Instructions.AND" Collapsed="true">
+    <Position X="17.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InstructionsUnit\Instructions\AND.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.InstructionsUnit.Instructions.DIVU" Collapsed="true">
+    <Position X="19" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InstructionsUnit\Instructions\DIVU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.InstructionsUnit.Instructions.EXG" Collapsed="true">
+    <Position X="21" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InstructionsUnit\Instructions\EXG.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.InstructionsUnit.Instructions.HLT" Collapsed="true">
+    <Position X="21" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InstructionsUnit\Instructions\HLT.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.InstructionsUnit.Instructions.LD" Collapsed="true">
+    <Position X="15" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InstructionsUnit\Instructions\LD.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.InstructionsUnit.Instructions.LSP" Collapsed="true">
+    <Position X="15" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InstructionsUnit\Instructions\LSP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.InstructionsUnit.Instructions.MIN" Collapsed="true">
+    <Position X="16.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InstructionsUnit\Instructions\MIN.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.InstructionsUnit.Instructions.MULS" Collapsed="true">
+    <Position X="16.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InstructionsUnit\Instructions\MULS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.InstructionsUnit.Instructions.NOT" Collapsed="true">
+    <Position X="19" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InstructionsUnit\Instructions\NOT.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.InstructionsUnit.Instructions.OR" Collapsed="true">
+    <Position X="19" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InstructionsUnit\Instructions\OR.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.InstructionsUnit.Instructions.POP" Collapsed="true">
+    <Position X="21" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InstructionsUnit\Instructions\POP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.InstructionsUnit.Instructions.PUSH" Collapsed="true">
+    <Position X="21" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InstructionsUnit\Instructions\PUSH.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.InstructionsUnit.Instructions.STR" Collapsed="true">
+    <Position X="15" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InstructionsUnit\Instructions\STR.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SP.InstructionsUnit.Instructions.SUB" Collapsed="true">
+    <Position X="15" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InstructionsUnit\Instructions\SUB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="SP.MemoryUnit.Memory" Collapsed="true">
-    <Position X="18.25" Y="0.5" Width="1.5" />
+    <Position X="39.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAgAQAAAAAABBAAACIQAAAEgAQAAAAAACAAAAAAAAEA=</HashCode>
       <FileName>MemoryUnit\Memory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SP.Program" Collapsed="true">
-    <Position X="14.75" Y="1.5" Width="1.5" />
+    <Position X="36" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="SP.Properties.Resources" Collapsed="true">
+    <Position X="39.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
   <Class Name="SP.Readers.FileReader" Collapsed="true">
-    <Position X="0.5" Y="7.75" Width="1.5" />
+    <Position X="0.5" Y="10.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEAAAAAAAAAAAAAAAAAAAAIABAAAAAAAAIAAAAABAAA=</HashCode>
       <FileName>Readers\FileReader.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SP.Readers.Reader">
-    <Position X="1.75" Y="6.5" Width="1.5" />
+  <Class Name="SP.Readers.Reader" Collapsed="true">
+    <Position X="1.75" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEAAAAAAAAAAAAAAAAAAAAIABAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Readers\Reader.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SP.Readers.StringReader" Collapsed="true">
-    <Position X="2.75" Y="7.75" Width="1.5" />
+    <Position X="2.75" Y="10.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEAAAAAAAAAAAAAAAAAAAAIAJAAAAAACIAAAAAAAAAA=</HashCode>
       <FileName>Readers\StringReader.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SP.Records.LineParser" Collapsed="true">
-    <Position X="16.5" Y="0.5" Width="1.5" />
+    <Position X="37.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
       <FileName>Records\LineParser.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SP.Records.Record">
-    <Position X="11.5" Y="5" Width="1.5" />
+  <Class Name="SP.Records.Record" Collapsed="true">
+    <Position X="37.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAACAAAAAAAABAAAAAAAAAIAAAAAAAAQAAEAAAA=</HashCode>
       <FileName>Records\Record.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SP.RegistersUnit.Register" Collapsed="true">
-    <Position X="14.75" Y="2.5" Width="1.5" />
+  <Class Name="SP.RegistersUnit.Register">
+    <Position X="36" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAQAAACAAAAAAACAAgAAAAAAAAACABAAAQgBAQAAE=</HashCode>
       <FileName>RegistersUnit\Register.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SP.RegistersUnit.Registers" Collapsed="true">
-    <Position X="16.5" Y="2.5" Width="1.5" />
+  <Class Name="SP.RegistersUnit.Registers">
+    <Position X="37.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAACAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAACAAAEAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>RegistersUnit\Registers.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="SP.Filters.ErrorLevel" Collapsed="true">
-    <Position X="14.75" Y="3.75" Width="1.5" />
+    <Position X="36" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAQAAAAAAABAAAAQAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Filters\Filter.cs</FileName>
     </TypeIdentifier>
   </Enum>
+  <Enum Name="SP.InstructionsUnit.FuncCatchRes">
+    <Position X="32.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAABIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InstructionsUnit\InstructionBase.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SP.InstructionsUnit.InstructionTypes">
+    <Position X="32.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACCAgIQAAAgAAAAgAQhIAAAAAAAAAAAAoBA=</HashCode>
+      <FileName>InstructionsUnit\InstructionTypes.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Enum Name="SP.RegistersUnit.RegistersIndex" Collapsed="true">
-    <Position X="16.5" Y="3.75" Width="1.5" />
+    <Position X="41.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAIAAAAIAAAAAIBAAAAAICAAAAAQGAAAAAAABA=</HashCode>
       <FileName>RegistersUnit\RegistersIndex.cs</FileName>
     </TypeIdentifier>
   </Enum>
+  <Delegate Name="SP.InstructionsUnit.InstructionExcutionFinished">
+    <Position X="36" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InstructionsUnit\InstructionBase.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="SP.InstructionsUnit.InstructionNeedsExtraTwoBytes" Collapsed="true">
+    <Position X="37.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InstructionsUnit\InstructionBase.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

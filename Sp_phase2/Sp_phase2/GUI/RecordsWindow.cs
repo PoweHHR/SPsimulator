@@ -23,12 +23,7 @@ namespace SP.GUI
     public partial class RecordsWindow : Form
     {
 
-        public Memory     memUnit = new Memory();
-        List<Record>      records = new List<Record>();
-        public Registers  regs = new Registers();
-        public FileReader fReader;
-
-        InstructionExcuter exec;
+       
         
         public RecordsWindow()
         {
@@ -58,18 +53,18 @@ namespace SP.GUI
             return this.RecordBox;
         }
 
-        public void runCode()
-        {
-            for (int i =0 ; i < records.Count ;i++){
-                if (records[i].RecordType == 1)
-                {
-                    regs[RegistersIndex.PC].value = records[i].address;
-                    txtPC.Text = records[i].address.ToString("X4");
-                    return;
-                }
-            }
-            MessageBox.Show("Load code first!");
-        }
+        //public void runCode()
+        //{
+        //    for (int i =0 ; i < records.Count ;i++){
+        //        if (records[i].RecordType == 1)
+        //        {
+        //            regs[RegistersIndex.PC].value = records[i].address;
+        //            txtPC.Text = records[i].address.ToString("X4");
+        //            return;
+        //        }
+        //    }
+        //    MessageBox.Show("Load code first!");
+        //}
 
         public void LoadFileToRecordBox(string file)
         {
@@ -85,6 +80,13 @@ namespace SP.GUI
             }
             RecordBox.Text = Data;
         }
+
+
+
+
+        //Assumption: code free of errors
+        //make sure to check for errors before calling this method
+       
 
 
         public void checkforErrors()
@@ -145,170 +147,7 @@ namespace SP.GUI
             
         }
 
-        public void LoadFileToMemory()
-        {
-            LoadFileToMemory(memUnit);
-        }
-        public void LoadFileToMemory(Memory mem){
-            mem.Reset();
-            Reader  fReader= new StringReader(RecordBox.Text);
-            ErrorsList.Items.Clear();
-            int LineCounter=-1;
-            fReader.OpenReadingSession();
-            int linesCount = fReader.GetLineCount();
-
-            records = new List<Record>();
-            List<Filter> filters = new List<Filter>();
-
-            //filters.Add(new AddressSeqFilter());
-            //filters.Add(new ByteCountFilter());
-            //filters.Add(new CheckSumFilter());
-            //filters.Add(new duplicateRecorcdType1Filter());
-            //filters.Add(new MemoryBoundFilter());
-            //filters.Add(new MissingRecord2Filter());
-
-            string Line;
-            LineParser parser = new LineParser();
-            bool NoErrorsFound = true;
-            string Data="";
-            while ( (Line = fReader.GetNextLine())!= null            ){
-                try{
-                    LineCounter++;
-                    Data += Line + Environment.NewLine;
-                    records.Add ( parser.TryParseLine(Line)) ;  
-
-                    for (int j =0 ; j < filters.Count;j++){
-                        ErrorLevel e = filters[j].IsValidRecord(records[records.Count-1],LineCounter,linesCount);
-                        if (e == ErrorLevel.Error || e == ErrorLevel.Warning){
-                            string s = "Error: ";
-                            if (e == ErrorLevel.Warning) s = "Warning: ";
-                            ErrorsList.Items.Add(s+filters[j].GetReason() + "(Line." + LineCounter + ")");
-                        }
-                    }
-
-                    
-                   
-                }catch(ParseException e){
-                    NoErrorsFound = false;
-                    ErrorsList.Items.Add("Error: " +e.Message +"(Line." + LineCounter+")"  );
-                }
-            }
-            //RecordBox.Text = Data;
-
-
-            //load to memory part
-            if (NoErrorsFound)
-            {
-                for (int i = 0; i < records.Count; i++)
-                {
-                    if (records[i].RecordType != 1)
-                        mem.WriteBytesAtAddress(records[i].address, records[i].data);
-                    else
-                        mem.setshortAt(0, records[i].address);
-                }
-            }
-        }
-
-        public void FinishedIRexec(IexcRes r)
-        {
-            UpdateRegistersInterface();
-            if (r.id != -1)
-            //MessageBox.Show(r.revStr);
-            {
-                if (r.inStrMode && !r.inExecMode)
-                    InstrBox.Text += r.revStr + Environment.NewLine;
-                
-                if (r.inExecMode && r.inStrMode)
-                {
-                    InstrBox.SelectionBackColor = Color.White;
-                    int s = InstrBox.GetFirstCharIndexFromLine(r.id + 1);
-                    int e = InstrBox.GetFirstCharIndexFromLine(r.id + 2);
-                    InstrBox.Select(s, e - s);
-                   // InstrBox.SelectedText = r.revStr;
-                    InstrBox.SelectionBackColor = Color.Red;
-                }
-            }
-            else
-            {
-                if (r.inStrMode && r.inExecMode)
-                {
-                    int s = InstrBox.GetFirstCharIndexFromLine(r.id + 1);
-                    int e = InstrBox.GetFirstCharIndexFromLine(r.id + 2);
-                    InstrBox.SelectionBackColor = Color.White;
-                    InstrBox.Select(s, e - s);
-                    InstrBox.SelectionBackColor = Color.Red;
-                }
-
-            }
-            
-        }
-        public void ExcuteCode()
-        {
-            if (exec == null)
-            {
-                LoadFileToMemory();
-                ReverseCode();
-                exec = new InstructionExcuter(memUnit, regs);
-                exec.instructionFinsihed += new InstructionExcutionFinished(FinishedIRexec);
-                exec.OpenExcutionSession(true);
-            }
-            else
-                if (!exec.ExecuteNextInstruction())
-                {
-                    exec.IsSessionStarted = false;
-                    exec.DestroyExcuter();
-                    exec = null;
-
-                }
-            //exec.DestroyExcuter();
-           // MessageBox.Show("X4: " + regs[RegistersIndex.X4].value.ToString("X4"));
-
-        }
-        public void ExcuteAll()
-        {
-            if (exec == null)
-            {
-                LoadFileToMemory();
-                //ReverseCode();
-                exec = new InstructionExcuter(memUnit, regs);
-                exec.instructionFinsihed += new InstructionExcutionFinished(FinishedIRexec);
-                exec.OpenExcutionSession(false);
-            }
-            else
-            {
-                while (exec.ExecuteNextInstruction()) ;
-                
-                    exec.IsSessionStarted = false;
-                    exec.DestroyExcuter();
-                    exec = null;
-            }
-            //exec.DestroyExcuter();
-            // MessageBox.Show("X4: " + regs[RegistersIndex.X4].value.ToString("X4"));
-
-        }
-        public void ReverseCode()
-        {
-            
-            InstrBox.Clear();
-            Memory memTemp = new Memory();
-           // Registers regsTemp = regs;
-
-            //memUnit = new Memory();
-            //regs = new Registers();
-
-            LoadFileToMemory(memTemp); //reset the memory 
-
-            InstructionExcuter exec = new InstructionExcuter( memTemp, new Registers());
-            exec.instructionFinsihed += new InstructionExcutionFinished(FinishedIRexec);
-            exec.OpenReverseEngineeringSession();
-            while (exec.ExecuteNextInstruction()) ;
-
-           // memUnit = memTemp; // restore old mem;
-           // regs = regsTemp;
-            UpdateRegistersInterface();
-            exec.DestroyExcuter();
-        }
-
+       
 
         private void groupBox2_Enter(object sender, EventArgs e)
         {

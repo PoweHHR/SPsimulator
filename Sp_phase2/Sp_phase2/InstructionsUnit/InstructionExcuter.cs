@@ -102,6 +102,8 @@ namespace SP.InstructionsUnit
             r.id = -1;
             r.inExecMode = _inexecMode;
             r.inStrMode = _inStrMode;
+            r.NextExecutionAddress = regs[RegistersIndex.PC].value;
+
             if (instructionFinsihed != null) instructionFinsihed(r);
         }
 
