@@ -26,12 +26,12 @@ namespace SP.InstructionsUnit.Instructions
                 if (instr.addressingMode == Decode.AddressingRegister)
                 {
 
-
+                    instr.rs = instr.rd;
 
                     if (instr.sizeAndR == Decode.SizeWord)
                     {
                         ushort newSPAddress = (ushort)(regs[RegistersIndex.SP].value + 2);
-                        if (newSPAddress < 0xFC00) res.Success = false;
+                        if ((newSPAddress < 0xFC00) & newSPAddress != 0) res.Success = false;
                         else
                         {
                             regs[instr.rs].value = mem.getshortAt(regs[RegistersIndex.SP].value);
@@ -50,7 +50,7 @@ namespace SP.InstructionsUnit.Instructions
                     else
                     {
                         ushort newSPAddress = (ushort)(regs[RegistersIndex.SP].value + 1);
-                        if (newSPAddress < 0xFC00) res.Success = false;
+                        if ((newSPAddress < 0xFC00) & newSPAddress != 0) res.Success = false;
                         else
                         {
                             regs[instr.rs].lowByte = mem[regs[RegistersIndex.SP].value];

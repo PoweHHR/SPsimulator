@@ -212,5 +212,10 @@ namespace SP.GUI
         {
             ((RecordsWindow)this.ActiveMdiChild).ExcuteAll();
         }
+
+        private void contentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

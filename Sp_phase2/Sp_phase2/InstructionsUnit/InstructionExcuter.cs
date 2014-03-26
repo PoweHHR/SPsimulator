@@ -33,21 +33,37 @@ namespace SP.InstructionsUnit
             //Instruction.instructionNeedsTwoBytes += new InstructionNeedsExtraTwoBytes(ExtraTwoBytesGetter);
             //Instruction.instructionFinsihed += new InstructionExcutionFinished(FinishedTemp);
 
-            Instructions.Add(new Instructions.ADD());
-            Instructions.Add(new Instructions.AND());
+            Instructions.Add(new Instructions.ADD() );
+            Instructions.Add(new Instructions.AND() );
+            Instructions.Add(new Instructions.ASHR());
+            Instructions.Add(new Instructions.BCS());
+            Instructions.Add(new Instructions.BEQ());
+            Instructions.Add(new Instructions.BLT());
+            Instructions.Add(new Instructions.BNE());
+            Instructions.Add(new Instructions.BRA());
+            Instructions.Add(new Instructions.BSUB());
             Instructions.Add(new Instructions.DIVU());
-            Instructions.Add(new Instructions.HLT());
-            Instructions.Add(new Instructions.LD());
-            Instructions.Add(new Instructions.LSP());
-            Instructions.Add(new Instructions.MIN());
+            Instructions.Add(new Instructions.EXG() );
+            Instructions.Add(new Instructions.HLT() );
+            Instructions.Add(new Instructions.LD()  );
+            Instructions.Add(new Instructions.LSHL());
+            Instructions.Add(new Instructions.LSP() );
+            Instructions.Add(new Instructions.MIN() );
             Instructions.Add(new Instructions.MULS());
-            Instructions.Add(new Instructions.NOT());
-            Instructions.Add(new Instructions.OR());
-            Instructions.Add(new Instructions.POP());
+            Instructions.Add(new Instructions.NOT() );
+            Instructions.Add(new Instructions.OR()  );
+            Instructions.Add(new Instructions.POP() );
             Instructions.Add(new Instructions.PUSH());
+            Instructions.Add(new Instructions.RCR());
+            Instructions.Add(new Instructions.RSUB() );
             Instructions.Add(new Instructions.STR());
             Instructions.Add(new Instructions.SUB());
-            Instructions.Add(new Instructions.EXG());
+            Instructions.Add(new Instructions.BTST());
+            Instructions.Add(new Instructions.BSS());
+            Instructions.Add(new Instructions.BCLR());
+            Instructions.Add(new Instructions.CMP());
+            
+           
 
             foreach (Instruction x in Instructions)
             {

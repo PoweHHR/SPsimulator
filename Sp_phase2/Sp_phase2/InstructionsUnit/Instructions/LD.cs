@@ -48,7 +48,7 @@ namespace SP.InstructionsUnit.Instructions
                 
                 
                 else if (instr.addressingMode == Decode.AddressingRegister)
-                    bytes = bytes = regs[instr.rs].value;
+                    bytes = nBytes = regs[instr.rs].value;
 
                 if (instr.sizeAndR == Decode.SizeWord)
                 {

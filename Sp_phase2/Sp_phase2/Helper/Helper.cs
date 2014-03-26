@@ -59,6 +59,17 @@ namespace SP.Helpers
                 return (ushort)(d12 & 0x0FFF);
             }
         }
+        public static ushort Extend10bit(ushort d10)
+        {
+            if ((d10 & 0x0200) == 0x0200)
+            {
+                return (ushort)(d10 | 0xFC00);
+            }
+            else
+            {
+                return (ushort)(d10 & 0x03FF);
+            }
+        }
 
 
         public static ushort MakeWord(byte high, byte low)

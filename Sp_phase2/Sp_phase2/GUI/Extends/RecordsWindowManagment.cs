@@ -28,14 +28,14 @@ namespace SP.GUI
         {
             return str;
         }
-        public ListItem(string d, int _id) {str=d;id= _id; }
+        public ListItem(string d, int _id) { str = d; id = _id; }
         public ListItem(int _id)
         {
             id = _id;
         }
         public override bool Equals(Object obj)
         {
-            ListItem Obj= obj as ListItem;
+            ListItem Obj = obj as ListItem;
             if (Obj == null)
                 return false;
             else
@@ -45,17 +45,20 @@ namespace SP.GUI
         {
             return this.id.GetHashCode();
         }
-    
-    
+
+
     }
 
     public partial class RecordsWindow : Form
     {
-        public Memory        memUnit = new Memory();
+        public Memory memUnit = new Memory();
         List<Record> records = null;
-        public Registers     regs = new Registers();
-        public FileReader    fReader;
-        InstructionExcuter   exec;
+        public Registers regs = new Registers();
+        public FileReader fReader;
+        InstructionExcuter exec;
+
+
+        //Assumption: Code Free of Errors
         private List<Record> GetRecords(string ObjCodeStr)
         {
             List<Record> rs = new List<Record>();
@@ -73,7 +76,7 @@ namespace SP.GUI
                     Data += Line + Environment.NewLine;
                     rs.Add(parser.TryParseLine(Line));
                 }
-                catch (ParseException e)
+                catch
                 {
 
                 }
@@ -81,7 +84,7 @@ namespace SP.GUI
 
             return rs;
         }
-        
+
         public void LoadFileToMemory()
         {
             LoadFileToMemory(memUnit);
@@ -90,16 +93,16 @@ namespace SP.GUI
         //Assumption: code is free of errors;
         public void LoadFileToMemory(Memory mem)
         {
-                records = GetRecords(RecordBox.Text);
-                
-                for (int i = 0; i < records.Count; i++)
-                {
-                    if (records[i].RecordType == 2)
-                        mem.WriteBytesAtAddress(records[i].address, records[i].data);
-                    else if (records[i].RecordType ==1)
-                        mem.setshortAt(0, records[i].address);
-                }
-            
+            records = GetRecords(RecordBox.Text);
+
+            for (int i = 0; i < records.Count; i++)
+            {
+                if (records[i].RecordType == 2)
+                    mem.WriteBytesAtAddress(records[i].address, records[i].data);
+                else if (records[i].RecordType == 1)
+                    mem.setshortAt(0, records[i].address);
+            }
+
         }
 
         public void FinishedIRexec(IexcRes r)
@@ -182,7 +185,7 @@ namespace SP.GUI
             LoadFileToMemory(memTemp); //reset the memory 
 
 
-            ushort startExec=0;
+            ushort startExec = 0;
             foreach (Record r in records)
             {
                 if (r.RecordType == 1)
@@ -203,16 +206,16 @@ namespace SP.GUI
                             string str = "DC ";
                             for (int i = 0; i < r.data.Length; i += 2)
                             {
-                                str += "$" + Helper.MakeWord(r.data[i],r.data[i+1]).ToString("X");
-                                if (i +2 != r.data.Length) str+=",";
+                                str += "$" + Helper.MakeWord(r.data[i], r.data[i + 1]).ToString("X");
+                                if (i + 2 != r.data.Length) str += ",";
 
                             }
-                            InstructionsList.Items.Add(new ListItem(str,r.address));
+                            InstructionsList.Items.Add(new ListItem(str, r.address));
                         }
                         else
                         {
                             string str = "DC.B ";
-                            for (int i = 0; i < r.data.Length; i ++)
+                            for (int i = 0; i < r.data.Length; i++)
                             {
                                 str += "$" + r.data[i].ToString("X");
                                 if (i + 1 != r.data.Length) str += ",";
@@ -262,6 +265,6 @@ namespace SP.GUI
         //    exec.DestroyExcuter();
         //}
 
-    
+
     }
 }

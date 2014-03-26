@@ -14,7 +14,7 @@ namespace SP.RegistersUnit
         public const ushort N           = 0x0002;
         public const ushort C           = 0x0003;
         public const ushort byteSignBit = 0x0007;
-        public const ushort shortSignBit= 0x0010;
+        public const ushort shortSignBit= 0x000F;
 
 #endregion
         #region RegisterData
@@ -69,7 +69,27 @@ namespace SP.RegistersUnit
             }
 
         }
+        public void shiftWordRight(int amount)
+        {
+            data = data >> amount;
+            //make sure no carry bits here
+            //data = data & 0x0000FFFF;
+            
+        }
+        public void shiftWordLeft(int amount)
+        {
+            data = data << amount;
+            //make sure no carry bits here
+            //data = data & 0x0000FFFF;
 
+        }
+        public void shiftLowByteRight(int amount){
+            lowByte =  (byte)(lowByte >> amount);
+        }
+        public void shiftLowByteLeft(int amount)
+        {
+            lowByte = (byte)(lowByte << amount);
+        }
 
 
         
